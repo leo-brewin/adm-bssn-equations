@@ -1,0 +1,62 @@
+\documentclass[12pt]{cdblatex}
+\usepackage{eqtns}
+
+\begin{document}
+
+\section*{PhysRevD.67.084023}
+
+\begin{cadabra}
+   from shared import *
+   import cdblib
+
+   jsonfile = 'prd67.json'
+   cdblib.create (jsonfile)
+
+   # -----------------------------------------------------------------------------------------------
+   # eqn 19 = hamiltonian constraint
+   lhs := 0.                                                                  # cdb(prd67.eq19.lhs,lhs)
+   rhs := R - ABar_{a b} ABar^{a b} + (2/3) trK**2.                           # cdb(prd67.eq19.rhs,rhs)
+
+   cdblib.put ('prd67.eq19.lhs',lhs,jsonfile)
+   cdblib.put ('prd67.eq19.rhs',rhs,jsonfile)
+
+   # -----------------------------------------------------------------------------------------------
+   # eqn 20 = momentum constraint
+   lhs := 0.                                                                  # cdb(prd67.eq20.lhs,lhs)
+   rhs := \partial_{a}(ABar^{i a})
+          +6 ABar^{i a} \partial_{a}(\phi)
+          + ABar^{a b} GammaBar^{i}_{a b}
+          - (2/3) gBar^{i a} \partial_{a}(trK).                               # cdb(prd67.eq20.rhs,rhs)
+
+   cdblib.put ('prd67.eq20.lhs',lhs,jsonfile)
+   cdblib.put ('prd67.eq20.rhs',rhs,jsonfile)
+
+   # -----------------------------------------------------------------------------------------------
+   # eqn 27 = conformal transform of \Gamma
+   lhs := \Gamma^{a}_{b c}.                                                   # cdb(prd67.eq27.lhs,lhs)
+   rhs :=  GammaBar^{a}_{b c}
+           + 2 gBar^{a}_{c} \partial_{b}(\phi)
+           + 2 gBar^{a}_{b} \partial_{c}(\phi)
+           - 2 gBar_{b c} gBar^{a e} \partial_{e}(\phi).                      # cdb(prd67.eq27.rhs,rhs)
+
+   cdblib.put ('prd67.eq27.lhs',lhs,jsonfile)
+   cdblib.put ('prd67.eq27.rhs',rhs,jsonfile)
+
+
+\end{cadabra}
+
+\clearpage
+
+\begin{dgroup*}
+   \begin{dmath*} \cdb{prd67.eq19.lhs} = {\cal H} \hiderel{=} \Cdb*{prd67.eq19.rhs}\end{dmath*}
+\end{dgroup*}
+
+\begin{dgroup*}
+   \begin{dmath*} \cdb{prd67.eq20.lhs} = \exp(4\phi) {\cal D}^{i} \hiderel{=} \Cdb*{prd67.eq20.rhs}\end{dmath*}
+\end{dgroup*}
+
+\begin{dgroup*}
+   \begin{dmath*} \cdb{prd67.eq27.lhs} = \Cdb*{prd67.eq27.rhs}\end{dmath*}
+\end{dgroup*}
+
+\end{document}

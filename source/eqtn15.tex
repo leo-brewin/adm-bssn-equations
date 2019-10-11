@@ -1,0 +1,145 @@
+\documentclass[12pt]{cdblatex}
+\usepackage{eqtns}
+
+\begin{document}
+
+\section*{PhysRevD.62.044034 equation (15)}
+
+\begin{cadabra}
+   from shared import *
+   import cdblib
+
+   jsonfile = 'eqtn15.json'
+   cdblib.create (jsonfile)
+
+   defG2GBar = cdblib.get ('defG2GBar','gamma.json')
+
+   # --------------------------------------------------------------------------
+   # Rphi = the part of Rab from the conformal factor
+
+   Rab := R_{a b}.                                                   # cdb (eq15.101,Rab)
+
+   substitute     (Rab, defRab)                                      # cdb (eq15.102,Rab)
+   substitute     (Rab, defRiem)                                     # cdb (eq15.103,Rab)
+   substitute     (Rab, defG2GBar)                                   # cdb (eq15.104,Rab)
+   distribute     (Rab)                                              # cdb (eq15.105,Rab)
+   product_rule   (Rab)                                              # cdb (eq15.106,Rab)
+   Rab = product_sort (Rab)                                          # cdb (eq15.107,Rab)
+   rename_dummies (Rab)                                              # cdb (eq15.108,Rab)
+   canonicalise   (Rab)                                              # cdb (eq15.109,Rab)
+   substitute     (Rab, $gBar_{b c} gBar^{c a} -> gBar^{a}_{b}$)
+   substitute     (Rab, $\partial_{a}{gBar^{a}_{b}} -> 0$)
+   substitute     (Rab, $\partial_{a}{gBar_{b}^{c}} -> 0$)
+   substitute     (Rab, $gBar^{a}_{a} -> 3$)
+   eliminate_kronecker (Rab)                                         # cdb (eq15.110,Rab)
+   Rab = product_sort (Rab)                                          # cdb (eq15.111,Rab)
+   rename_dummies (Rab)                                              # cdb (eq15.112,Rab)
+   canonicalise   (Rab)                                              # cdb (eq15.113,Rab)
+   substitute     (Rab, $gBar_{b c} gBar^{c a} -> gBar^{a}_{b}$)     # cdb (eq15.114,Rab)
+   substitute     (Rab, $gBar^{a}_{a} -> 3$)                         # cdb (eq15.115,Rab)
+   eliminate_kronecker (Rab)                                         # cdb (eq15.116,Rab)
+
+   # |\clearpage|
+   # isolate Rphi from Rab by switching to local RNC
+
+   Rphi := @(Rab).
+
+   substitute (Rphi, $GammaBar^{a}_{b c}->0$)                        # cdb (eq15.117,Rphi)
+   substitute (Rphi, $\partial_{a}{gBar_{b c}}->0$)                  # cdb (eq15.118,Rphi)
+   substitute (Rphi, $\partial_{a}{gBar^{b c}}->0$)                  # cdb (eq15.119,Rphi)
+
+   substitute (Rphi, $\partial_{a b}{\phi} -> DBar_{a b}{\phi}$)     # cdb (eq15.120,Rphi)
+   substitute (Rphi, $\partial_{a}{\phi} -> DBar_{a}{\phi}$)         # cdb (eq15.121,Rphi)
+
+   defRphi := Rphi_{a b} -> @(Rphi).
+
+   cdblib.put ('defRphi',defRphi,jsonfile)
+\end{cadabra}
+
+\clearpage
+
+\begin{dgroup*}[spread=5pt]
+   \begin{dmath*}
+      \cdb{eq15.101}
+         = \Cdb*{eq15.102}
+         = \Cdb*{eq15.103}
+         = \Cdb*[\hskip2.5cm\hfill]{eq15.104}
+         = \Cdb*{eq15.105}
+         = \Cdb*{eq15.106}
+         = \Cdb*{eq15.107}
+   \end{dmath*}
+\end{dgroup*}
+
+\clearpage
+
+\begin{dgroup*}[spread=5pt]
+   \begin{dmath*}
+      \cdb{eq15.101}
+         = \Cdb*{eq15.108}
+         = \Cdb*[\hskip2cm\hfill]{eq15.109}
+         = \Cdb*{eq15.110}
+         = \Cdb*{eq15.111}
+         = \Cdb*{eq15.112}
+   \end{dmath*}
+\end{dgroup*}
+
+\clearpage
+
+\begin{dgroup*}[spread=5pt]
+   \begin{dmath*}
+      \cdb{eq15.101}
+         = \Cdb*[\hskip2.5cm\hfill]{eq15.113}
+         = \Cdb*[\hskip2.5cm\hfill]{eq15.114}
+         = \Cdb*{eq15.115}
+         = \Cdb*{eq15.116}
+   \end{dmath*}
+\end{dgroup*}
+
+The above doesn't look much like equation (15). So, what do we do? First note that {\tt (eq15.116)}
+represents the full $R_{ab}$, that is, equation (14). To isolate the contributions from $\phi$
+we can first set $\bar{\Gamma}$ and its derivatives to zero (which in turn requires setting
+$\partial_{a} \bar{g}_{bc}=0$). The result is equation {\tt (eq15.119)} below. Having set
+$\bar{\Gamma}$ to zero means that we can replace $\partial$ with $\bar{D}$ leading to equation
+{\tt (eq15.121)}. But that is clearly a tensor equation and so by the usual arguments it must be true
+in all frames (not just this frame with $\bar{\Gamma}=0$). It's a standard argument and I've
+probably overdone the discussion. Anyway, equation {\tt (eq15.121)} is exactly equation $(15)$ from
+the paper. Yeah.
+
+\begin{dgroup*}[spread=5pt]
+   \begin{dmath*}
+      R^{\phi}_{ab}
+         = \Cdb*{eq15.117}
+         = \Cdb*{eq15.118}
+         = \Cdb*{eq15.119}
+         = \Cdb*{eq15.120}
+         = \Cdb*{eq15.121}
+   \end{dmath*}
+\end{dgroup*}
+
+\clearpage
+
+\begin{cadabra}
+   # --------------------------------------------------------------------------
+   # Check against prd62.
+
+   foo := @(Rphi).                                      # cdb(eq15.lcb,foo)
+   bah  = cdblib.get('prd62.eq15.rhs','prd62.json')     # cdb(eq15.prd,bah)
+
+   diff := @(foo) - @(bah).
+
+   distribute     (diff)
+   diff = product_sort (diff)
+   rename_dummies (diff)
+   map_sympy      (diff, "simplify")
+   canonicalise   (diff)                                # cdb(eq15.chk,diff)
+\end{cadabra}
+
+% \clearpage
+
+\begin{dgroup*}
+   \begin{dmath*} \cdb*{eq15.lcb} \end{dmath*}
+   \begin{dmath*} \cdb*{eq15.prd} \end{dmath*}
+   \begin{dmath*} \cdb*{eq15.chk} \end{dmath*}
+\end{dgroup*}
+
+\end{document}

@@ -1,0 +1,71 @@
+\documentclass[12pt]{cdblatex}
+\usepackage{eqtns}
+
+\begin{document}
+
+\section*{Basic ADM equations, see PhysRevD.62.044034}
+
+\begin{cadabra}
+   from shared import *
+   import cdblib
+
+   jsonfile = 'adm.json'
+   cdblib.create (jsonfile)
+
+   # -----------------------------------------------------------------------------------------------
+   # prd62 eqn 01
+   lhs := \partial_{t}{g_{i j}}.                                           # cdb(adm.DgijDt.lhs,lhs)
+   rhs := -2 N K_{i j}.                                                    # cdb(adm.DgijDt.rhs,rhs)
+   DgijDt := @(lhs) -> @(rhs).                                             # cdb(adm.DgijDt,DgijDt)
+
+   cdblib.put ('adm.DgijDt.lhs',lhs,jsonfile)
+   cdblib.put ('adm.DgijDt.rhs',rhs,jsonfile)
+   cdblib.put ('adm.DgijDt',DgijDt,jsonfile)
+
+   # -----------------------------------------------------------------------------------------------
+   # raised indices of prd62 eqn 01
+   lhs := \partial_{t}{g^{i j}}.                                           # cdb(adm.DhijDt.lhs,lhs)
+   rhs :=  2 N K^{i j}.                                                    # cdb(adm.DhijDt.rhs,rhs)
+   DhijDt := @(lhs) -> @(rhs).                                             # cdb(adm.DhijDt,DhijDt)
+
+   cdblib.put ('adm.DhijDt.lhs',lhs,jsonfile)
+   cdblib.put ('adm.DhijDt.rhs',rhs,jsonfile)
+   cdblib.put ('adm.DhijDt',DhijDt,jsonfile)
+
+   # -----------------------------------------------------------------------------------------------
+   # prd62 eqn 02
+   lhs := \partial_{t}{K_{i j}}.                                           # cdb(adm.DKijDt.lhs,lhs)
+   rhs := - D_{i j}{N} + N (R_{i j}
+          + trK K_{i j} - 2 K_{i c} K_{j d} g^{c d}).                      # cdb(adm.DKijDt.rhs,rhs)
+   DKijDt := @(lhs) -> @(rhs).                                             # cdb(adm.DKijDt,DKijDt)
+
+   cdblib.put ('adm.DKijDt.lhs',lhs,jsonfile)
+   cdblib.put ('adm.DKijDt.rhs',rhs,jsonfile)
+   cdblib.put ('adm.DKijDt',DKijDt,jsonfile)
+
+   # -----------------------------------------------------------------------------------------------
+   # miscellanous
+
+   lhs := \partial_{t}{detg}.                                              # cdb(adm.DdetgDt.lhs,lhs)
+   rhs := detg g^{i j} \partial_{t}{g_{i j}}.                              # cdb(adm.DdetgDt.rhs,rhs)
+   DdetgDt := @(lhs) -> @(rhs).                                            # cdb(adm.DdetgDt,DdetgDt)
+
+   cdblib.put ('adm.DdetgDt.lhs',lhs,jsonfile)
+   cdblib.put ('adm.DdetgDt.rhs',rhs,jsonfile)
+   cdblib.put ('adm.DdetgDt',DdetgDt,jsonfile)
+
+\end{cadabra}
+
+\clearpage
+
+\begin{dgroup*}
+   \begin{dmath*} \Cdb*{adm.DgijDt}\end{dmath*}
+   \begin{dmath*} \Cdb*{adm.DhijDt}\end{dmath*}
+   \begin{dmath*} \Cdb*{adm.DKijDt}\end{dmath*}
+\end{dgroup*}
+
+\begin{dgroup*}
+   \begin{dmath*} \Cdb*{adm.DdetgDt}\end{dmath*}
+\end{dgroup*}
+
+\end{document}

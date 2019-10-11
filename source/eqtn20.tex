@@ -1,0 +1,60 @@
+\documentclass[12pt]{cdblatex}
+\usepackage{eqtns}
+
+\begin{document}
+
+\section*{PhysRevD.62.044034 equation (20)}
+
+\begin{cadabra}
+   from shared import *
+   import cdblib
+
+   jsonfile = 'eqtn20.json'
+   cdblib.create (jsonfile)
+
+   dotGiBar = cdblib.get ('dotGiBar','eqtn19.json')
+   defMomSub = cdblib.get ('defMomSub','momentum.json')
+
+   # --------------------------------------------------------------------------
+   # DGiBarDt pt.2
+
+   substitute (dotGiBar, defMomSub)      # cdb(eq20.101,dotGiBar)
+\end{cadabra}
+
+\input{eqtn19.cdbtex}
+
+\begin{dgroup*}[spread=5pt]
+   \begin{dmath*}
+      \cdb{eq19.101}
+         = \Cdb*{eq19.106}
+         = \Cdb*{eq20.101}
+   \end{dmath*}
+\end{dgroup*}
+
+\clearpage
+
+\begin{cadabra}
+   # --------------------------------------------------------------------------
+   # Check against prd62.
+
+   foo := @(dotGiBar).                                  # cdb (eq20.lcb,foo)
+   bah  = cdblib.get('prd62.eq20.rhs','prd62.json')     # cdb (eq20.prd,bah)
+
+   diff := @(foo) - @(bah).
+
+   distribute     (diff)
+   diff = product_sort (diff)
+   rename_dummies (diff)
+   map_sympy      (diff, "simplify")
+   canonicalise   (diff)                                # cdb (eq20.chk,diff)
+\end{cadabra}
+
+% \clearpage
+
+\begin{dgroup*}
+   \begin{dmath*} \cdb*{eq20.lcb} \end{dmath*}
+   \begin{dmath*} \cdb*{eq20.prd} \end{dmath*}
+   \begin{dmath*} \cdb*{eq20.chk} \end{dmath*}
+\end{dgroup*}
+
+\end{document}

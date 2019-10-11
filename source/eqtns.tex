@@ -1,0 +1,253 @@
+\pdfoutput=1% forces arxiv to use pdflatex
+% ---------------------------------------------------------------------------------------
+\def\Title{Deriving the BSSN equations from the ADM equations}
+\def\Author{Leo Brewin}
+% ---------------------------------------------------------------------------------------
+\documentclass[12pt]{cdblatex}
+\usepackage[final]{pdfpages}
+
+\hypersetup{colorlinks=true,
+            citecolor=blue,
+            linkcolor=red,
+            pdfauthor= \Author,
+            pdftitle = \Title}
+
+\begin{document}
+
+\CdbSetup{action=verbatim}
+
+\input{eqtn09.cdbtex}
+\input{eqtn10.cdbtex}
+\input{eqtn11.cdbtex}
+\input{eqtn12.cdbtex}
+\input{eqtn15.cdbtex}
+\input{eqtn17.cdbtex}
+\input{eqtn18.cdbtex}
+\input{eqtn19.cdbtex}
+\input{eqtn20.cdbtex}
+
+\input{gamma.cdbtex}
+\input{hamiltonian.cdbtex}
+\input{momentum.cdbtex}
+
+% =======================================================================================
+\section*{Deriving the BSSN equations from the ADM equations}
+
+The following Cadabra codes verifies, for the particular case of vacuum spacetimes,
+the main equations (with zero-sift) in the Phys Rev D papers Phys.Rev.D. (62) 044034 (2000) and
+Phys.Rev.D. (67) 084023 (2003) by Miguel Alcubierre, Bernd Brugmann etal. .
+
+The two papers are abbreviated as pdr62 and prd67 respectively.
+
+All of the essential BSSN equations are covered, in particlular equations
+9, 10, 11, 12 , 15, 17, 18, 19 and 20 from prd62 and equations 19, 20 and 27 from
+prd67.
+
+The first few pages provides a summary of the calculations. For each equation the
+summary is of the form
+%
+\begin{dgroup*}
+   \begin{dmath*} \cdb*{eq18.lcb} \end{dmath*}
+   \begin{dmath*} \cdb*{eq18.prd} \end{dmath*}
+   \begin{dmath*} \cdb*{eq18.chk} \end{dmath*}
+\end{dgroup*}
+
+The first line records the output from the Cadabra code, the second line is the
+corresponding equation in prd62 (or prd67) while the third line shows the difference.
+The good news is that for each equation the difference is zero (as it should be).
+
+The summary is then followed by the full details of the calculations for each
+equation. The output includes all of the steps. The odd looking equation numbers are
+tags that match the line in the Cadabra that generated the output. Thus the following
+output (from prd62 equation 11)
+%
+\begin{dgroup*}[spread=5pt]
+   \begin{dmath*}
+      \cdb{eq11.101}
+         = \Cdb*{eq11.102}
+         = \Cdb*{eq11.103}
+         = \Cdb*{eq11.104}
+         = \Cdb*{eq11.105}
+   \end{dmath*}
+\end{dgroup*}
+%
+can be matched line-by-line with the Cadabra code
+%
+\begin{cadabra}[numbers=none]
+   substitute     (dotK,trK)           # cdb (eq11.102,dotK)
+   product_rule   (dotK)               # cdb (eq11.103,dotK)
+   substitute     (dotK,DhijDt)        # cdb (eq11.104,dotK)
+   substitute     (dotK,DKijDt)        # cdb (eq11.105,dotK)
+\end{cadabra}
+
+\clearpage
+
+% =======================================================================================
+\section*{Running the codes}
+
+To run any of the codes you will need to install Cadabra. Compiling and installing
+Cadabra is straightforward with full details provided on the
+\url{https://github.com/kpeeters/cadabra2.git} repository on GitHub.
+
+You will also need to install the hybrid-latex tools. These are simple scripts and
+LaTeX macros that allow the Cadabra output to be caught and integrated back into the
+LaTeX source. See the {\tt INSTALL.txt} file in {\tt hybrid-latex} for full details.
+The documentation for hybrid-latex tools is included in the {\tt hybrid-latex}
+directory.
+
+You can compile any one of the files (e.g., {\tt eqtn11.tex}) using any of the
+following
+
+\lstset{numbers=none}
+\begin{lstlisting}
+   cdblatex.sh -i eqtn11
+   make  eqtn11
+   make .eqtn11
+\end{lstlisting}
+
+The first two commands will force a recompile of {\tt eqtn11} while the third command
+will use the magic of makefiles to determine if it (and its dependencies) needs to be
+recompiled.
+
+The {\tt cdblatex.sh} is the main script in the hybrid-latex codes. It does the job of
+extracting rhe embedded Cadabra code, running that code through Cadabra, collecting
+the output and finally making that output available to the LaTeX source.
+
+You may want to look inside the {\tt Makefile} to see which targets are available.
+
+Note that there are dependencies amongst the files and these dependencies are encoded
+in the makefile. See the file {\tt SEQUENCE.txt} for the details.
+
+\clearpage
+
+% =======================================================================================
+\section*{PhysRevD.62.044034}
+
+   % --------------------------------------------------
+   % Equation 9
+
+   \begin{dgroup*}
+      \begin{dmath*} \cdb*{eq09.lcb} \end{dmath*}
+      \begin{dmath*} \cdb*{eq09.prd} \end{dmath*}
+      \begin{dmath*} \cdb*{eq09.chk} \end{dmath*}
+   \end{dgroup*}
+
+   % --------------------------------------------------
+   % Equation 10
+
+   \begin{dgroup*}
+      \begin{dmath*} \cdb*{eq10.lcb} \end{dmath*}
+      \begin{dmath*} \cdb*{eq10.prd} \end{dmath*}
+      \begin{dmath*} \cdb*{eq10.chk} \end{dmath*}
+   \end{dgroup*}
+
+   % --------------------------------------------------
+   % Equation 11
+
+   \begin{dgroup*}
+      \begin{dmath*} \cdb*{eq11.lcb} \end{dmath*}
+      \begin{dmath*} \cdb*{eq11.prd} \end{dmath*}
+      \begin{dmath*} \cdb*{eq11.chk} \end{dmath*}
+   \end{dgroup*}
+
+   % --------------------------------------------------
+   % Equation 12
+
+   \begin{dgroup*}
+      \begin{dmath*} \cdb*{eq12.lcb} \end{dmath*}
+      \begin{dmath*} \cdb*{eq12.prd} \end{dmath*}
+      \begin{dmath*} \cdb*{eq12.chk} \end{dmath*}
+   \end{dgroup*}
+
+   % --------------------------------------------------
+   % Equation 15
+
+   \begin{dgroup*}
+      \begin{dmath*} \cdb*{eq15.lcb} \end{dmath*}
+      \begin{dmath*} \cdb*{eq15.prd} \end{dmath*}
+      \begin{dmath*} \cdb*{eq15.chk} \end{dmath*}
+   \end{dgroup*}
+
+   % --------------------------------------------------
+   % Equation 17
+
+   \begin{dgroup*}
+      \begin{dmath*} \cdb*{eq17.lcb} \end{dmath*}
+      \begin{dmath*} \cdb*{eq17.prd} \end{dmath*}
+      \begin{dmath*} \cdb*{eq17.chk} \end{dmath*}
+   \end{dgroup*}
+
+   % --------------------------------------------------
+   % Equation 18
+
+   \begin{dgroup*}
+      \begin{dmath*} \cdb*{eq18.lcb} \end{dmath*}
+      \begin{dmath*} \cdb*{eq18.prd} \end{dmath*}
+      \begin{dmath*} \cdb*{eq18.chk} \end{dmath*}
+   \end{dgroup*}
+
+   % --------------------------------------------------
+   % Equation 19
+
+   \begin{dgroup*}
+      \begin{dmath*} \cdb*{eq19.lcb} \end{dmath*}
+      \begin{dmath*} \cdb*{eq19.prd} \end{dmath*}
+      \begin{dmath*} \cdb*{eq19.chk} \end{dmath*}
+   \end{dgroup*}
+
+   % --------------------------------------------------
+   % Equation 20
+
+   \begin{dgroup*}
+      \begin{dmath*} \cdb*{eq20.lcb} \end{dmath*}
+      \begin{dmath*} \cdb*{eq20.prd} \end{dmath*}
+      \begin{dmath*} \cdb*{eq20.chk} \end{dmath*}
+   \end{dgroup*}
+
+% =======================================================================================
+\section*{PhysRevD.67.084023}
+
+   % --------------------------------------------------
+   % Equation 19
+
+   \begin{dgroup*}
+      \begin{dmath*} \cdb*{prd67.eq19.lcb} \end{dmath*}
+      \begin{dmath*} \cdb*{prd67.eq19.prd} \end{dmath*}
+      \begin{dmath*} \cdb*{prd67.eq19.chk} \end{dmath*}
+   \end{dgroup*}
+
+   % --------------------------------------------------
+   % Equation 20
+
+   \begin{dgroup*}
+      \begin{dmath*} \cdb*{prd67.eq20.lcb} \end{dmath*}
+      \begin{dmath*} \cdb*{prd67.eq20.prd} \end{dmath*}
+      \begin{dmath*} \cdb*{prd67.eq20.chk} \end{dmath*}
+   \end{dgroup*}
+
+   % --------------------------------------------------
+   % Equation 27
+
+   \begin{dgroup*}
+      \begin{dmath*} \cdb*{prd67.eq27.lcb} \end{dmath*}
+      \begin{dmath*} \cdb*{prd67.eq27.prd} \end{dmath*}
+      \begin{dmath*} \cdb*{prd67.eq27.chk} \end{dmath*}
+   \end{dgroup*}
+
+\clearpage
+
+\includepdf[pages=1-]{./eqtn09.pdf}
+\includepdf[pages=1-]{./eqtn10.pdf}
+\includepdf[pages=1-]{./eqtn11.pdf}
+\includepdf[pages=1-]{./eqtn12.pdf}
+\includepdf[pages=1-]{./eqtn15.pdf}
+\includepdf[pages=1-]{./eqtn17.pdf}
+\includepdf[pages=1-]{./eqtn18.pdf}
+\includepdf[pages=1-]{./eqtn19.pdf}
+\includepdf[pages=1-]{./eqtn20.pdf}
+
+\includepdf[pages=1-]{./gamma.pdf}
+\includepdf[pages=1-]{./hamiltonian.pdf}
+\includepdf[pages=1-]{./momentum.pdf}
+
+\end{document}

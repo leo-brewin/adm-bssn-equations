@@ -1,0 +1,115 @@
+\documentclass[12pt]{cdblatex}
+\usepackage{eqtns}
+
+\begin{document}
+
+\section*{PhysRevD.67.084023 equation (19)}
+
+\begin{cadabra}
+   from shared import *
+   import cdblib
+
+   jsonfile = 'hamiltonian.json'
+   cdblib.create (jsonfile)
+
+   # --------------------------------------------------------------------------
+   # Hamiltonian constraint
+
+   Ham := R + K_{a b} g^{a b} K_{c d} g^{c d} - K_{a b} K_{c d} g^{a c} g^{b d}.  # cdb (Ham.101,Ham)
+
+   defK2ABarD := K_{i j} -> \exp(4\phi) ABar_{i j} + (1/3) g_{i j} trK.
+   defG2GBarD := g_{a b} -> \exp(4\phi) gBar_{a b}.
+   defG2GBarU := g^{a b} -> \exp(-4\phi) gBar^{a b}.
+
+   substitute     (Ham, defK2ABarD)   # cdb (Ham.102,Ham)
+   substitute     (Ham, defG2GBarD)   # cdb (Ham.103,Ham)
+   substitute     (Ham, defG2GBarU)   # cdb (Ham.104,Ham)
+   distribute     (Ham)               # cdb (Ham.105,Ham)
+   Ham = product_sort (Ham)           # cdb (Ham.106,Ham)
+   rename_dummies (Ham)               # cdb (Ham.107,Ham)
+   canonicalise   (Ham)               # cdb (Ham.108,Ham)
+   map_sympy      (Ham, "simplify")   # cdb (Ham.109,Ham)
+
+   foo := gBar_{a b} gBar^{a b} -> 3.
+   bah := gBar_{a c} gBar^{b c} -> gBar_{a}^{b}.
+
+   substitute (Ham, foo)              # cdb (Ham.110,Ham)
+   substitute (Ham, bah)              # cdb (Ham.111,Ham)
+   eliminate_kronecker (Ham)          # cdb (Ham.112,Ham)
+
+   foo := gBar_{a b} gBar^{a b} -> 3.
+   bah := gBar_{a}^{a} -> 3.
+   moo := ABar_{a b} gBar^{a b} -> 0.
+
+   substitute     (Ham, foo)          # cdb (Ham.113,Ham)
+   substitute     (Ham, bah)          # cdb (Ham.114,Ham)
+   substitute     (Ham, moo)          # cdb (Ham.115,Ham)
+
+   foo := ABar_{c d} gBar^{c a} gBar^{d b} -> ABar^{a b}.
+
+   substitute     (Ham, foo)          # cdb (Ham.116,Ham)
+   rename_dummies (Ham)               # cdb (Ham.117,Ham)
+
+   cdblib.put ('Ham',Ham,jsonfile)
+\end{cadabra}
+
+\clearpage
+
+\begin{dgroup*}
+   \begin{dmath*}
+      {\cal H}
+          = \Cdb*{Ham.101}
+          = \Cdb*[\hskip2cm\hfill]{Ham.102}
+          = \Cdb*{Ham.103}
+          = \Cdb*{Ham.104}
+          = \Cdb*[\hskip2cm\hfill]{Ham.105}
+          = \Cdb*{Ham.106}
+   \end{dmath*}
+\end{dgroup*}
+
+\clearpage
+
+\begin{dgroup*}
+   \begin{dmath*}
+      {\cal H}
+          = \Cdb*[\hskip2cm\hfill]{Ham.107}
+          = \Cdb*[\hskip2cm\hfill]{Ham.108}
+          = \Cdb*{Ham.109}
+          = \Cdb*{Ham.110}
+          = \Cdb*{Ham.111}
+          = \Cdb*{Ham.112}
+          = \Cdb*{Ham.113}
+          = \Cdb*{Ham.114}
+          = \Cdb*{Ham.115}
+          = \Cdb*{Ham.116}
+          = \Cdb*{Ham.117}
+   \end{dmath*}
+\end{dgroup*}
+
+\clearpage
+
+\begin{cadabra}
+   # --------------------------------------------------------------------------
+   # Check against prd67.
+
+   foo := @(Ham).                                       # cdb(prd67.eq19.lcb,foo)
+   bah  = cdblib.get('prd67.eq19.rhs','prd67.json')     # cdb(prd67.eq19.prd,bah)
+
+   diff := @(foo) - @(bah).
+
+   distribute     (diff)
+   diff = product_sort (diff)
+   rename_dummies (diff)
+   map_sympy      (diff, "simplify")
+   canonicalise   (diff)                                # cdb(prd67.eq19.chk,diff)
+\end{cadabra}
+
+% \clearpage
+
+\begin{dgroup*}
+   \begin{dmath*} \cdb*{prd67.eq19.lcb} \end{dmath*}
+   \begin{dmath*} \cdb*{prd67.eq19.prd} \end{dmath*}
+   \begin{dmath*} \cdb*{prd67.eq19.chk} \end{dmath*}
+\end{dgroup*}
+
+\end{document}

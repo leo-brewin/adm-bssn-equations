@@ -1,0 +1,78 @@
+\documentclass[12pt]{cdblatex}
+\usepackage{eqtns}
+
+\begin{document}
+
+\section*{PhysRevD.62.044034 equation (10)}
+
+\begin{cadabra}
+   from shared import *
+   import cdblib
+
+   jsonfile = 'eqtn10.json'
+   cdblib.create (jsonfile)
+
+   DgijDt  = cdblib.get ('adm.DgijDt','adm.json')
+   DdetgDt = cdblib.get ('adm.DdetgDt','adm.json')
+
+   # --------------------------------------------------------------------------
+
+   phi   := \phi -> (1/12) \log(detg).
+   gdotK := g^{i j} K_{i j} -> trK.
+
+   # --------------------------------------------------------------------------
+   # d\phi/dt
+
+   dotphi := \partial_{t}{\phi}.     # cdb (eq10.101,dotphi)
+
+   substitute (dotphi, phi)          # cdb (eq10.102,dotphi)
+   substitute (dotphi, dlog)         # cdb (eq10.103,dotphi)
+   substitute (dotphi, DdetgDt)      # cdb (eq10.104,dotphi)
+   substitute (dotphi, DgijDt)       # cdb (eq10.105,dotphi)
+   substitute (dotphi, gdotK)        # cdb (eq10.106,dotphi)
+   map_sympy  (dotphi, "simplify")   # cdb (eq10.107,dotphi)
+
+   DphiDt := \partial_{t}{\phi} -> @(dotphi).
+
+   cdblib.put ('DphiDt',DphiDt,jsonfile)
+\end{cadabra}
+
+\clearpage
+
+\begin{dgroup*}[spread=5pt]
+   \begin{dmath*}
+      \cdb{eq10.101}
+         = \Cdb*{eq10.102}
+         = \Cdb*{eq10.103}
+         = \Cdb*{eq10.104}
+         = \Cdb*{eq10.105}
+         = \Cdb*{eq10.106}
+         = \Cdb*{eq10.107}
+   \end{dmath*}
+\end{dgroup*}
+
+\clearpage
+
+\begin{cadabra}
+   # --------------------------------------------------------------------------
+   # Check against prd62.
+
+   foo := @(dotphi).                                  # cdb(eq10.lcb,foo)
+   bah  = cdblib.get('prd62.eq10.rhs','prd62.json')   # cdb(eq10.prd,bah)
+
+   diff := @(foo) - @(bah).
+
+   diff = product_sort (diff)
+   rename_dummies (diff)
+   canonicalise   (diff)                              # cdb(eq10.chk,diff)
+\end{cadabra}
+
+% \clearpage
+
+\begin{dgroup*}
+   \begin{dmath*} \cdb*{eq10.lcb} \end{dmath*}
+   \begin{dmath*} \cdb*{eq10.prd} \end{dmath*}
+   \begin{dmath*} \cdb*{eq10.chk} \end{dmath*}
+\end{dgroup*}
+
+\end{document}

@@ -1,0 +1,36 @@
+\chardef\thehashcode=\catcode`\#	 % save catcode of hash (probably 6)
+\catcode`\#=11			             % set catcode for hash to be a letter (11)
+\cdbtag{eq17.101}{%
+{\bar{g}}^{j k} {\bar{\Gamma}}^{i}{}_{j k}%
+}
+\cdbtag{eq17.102}{%
+\frac{1}{2}{\bar{g}}^{j k} {\bar{g}}^{i e} \left(\partial_{j}{{\bar{g}}_{e k}}+\partial_{k}{{\bar{g}}_{j e}}-\partial_{e}{{\bar{g}}_{j k}}\right)%
+}
+\cdbtag{eq17.103}{%
+\frac{1}{2}{\bar{g}}^{j k} {\bar{g}}^{i e} \partial_{j}{{\bar{g}}_{e k}}+\frac{1}{2}{\bar{g}}^{j k} {\bar{g}}^{i e} \partial_{k}{{\bar{g}}_{j e}} - \frac{1}{2}{\bar{g}}^{j k} {\bar{g}}^{i e} \partial_{e}{{\bar{g}}_{j k}}%
+}
+\cdbtag{eq17.104}{%
+\frac{1}{2}{\bar{g}}^{i a} {\bar{g}}^{c b} \partial_{c}{{\bar{g}}_{a b}}+\frac{1}{2}{\bar{g}}^{i b} {\bar{g}}^{a c} \partial_{c}{{\bar{g}}_{a b}} - \frac{1}{2}{\bar{g}}^{i c} {\bar{g}}^{a b} \partial_{c}{{\bar{g}}_{a b}}%
+}
+\cdbtag{eq17.105}{%
+\frac{1}{2}{\bar{g}}^{i b} {\bar{g}}^{a c} \partial_{a}{{\bar{g}}_{b c}}+\frac{1}{2}{\bar{g}}^{i b} {\bar{g}}^{c a} \partial_{a}{{\bar{g}}_{c b}} - \frac{1}{2}{\bar{g}}^{i a} {\bar{g}}^{b c} \partial_{a}{{\bar{g}}_{b c}}%
+}
+\cdbtag{eq17.106}{%
+{\bar{g}}^{i a} {\bar{g}}^{b c} \partial_{b}{{\bar{g}}_{a c}} - \frac{1}{2}{\bar{g}}^{i a} {\bar{g}}^{b c} \partial_{a}{{\bar{g}}_{b c}}%
+}
+\cdbtag{eq17.107}{%
+-\partial_{b}{{\bar{g}}^{i b}} - \frac{1}{2}{\bar{g}}^{i a} {\bar{g}}^{b c} \partial_{a}{{\bar{g}}_{b c}}%
+}
+\cdbtag{eq17.108}{%
+-\partial_{b}{{\bar{g}}^{i b}}%
+}
+\cdbtag{eq17.lcb}{%
+-\partial_{b}{{\bar{g}}^{i b}}%
+}
+\cdbtag{eq17.prd}{%
+-\partial_{j}{{\bar{g}}^{i j}}%
+}
+\cdbtag{eq17.chk}{%
+0%
+}
+\catcode`\#=\thehashcode          % restore original catcode for hash

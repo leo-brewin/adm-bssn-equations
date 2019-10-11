@@ -1,0 +1,49 @@
+dependancy
+----------
+
+   file                  depends on
+---------------------------------------
+
+   prd62              <- shared
+   prd67              <- shared
+
+   gamma              <- prd67, shared
+   hamiltonian        <- prd67, shared
+   momentum           <- gamma, prd67, shared
+
+   eqtn09             <- adm, eqtn10, prd62, shared
+   eqtn10             <- adm, prd62, shared
+   eqtn11             <- adm, prd62, shared
+   eqtn12             <- adm, eqtn10, eqtn11, prd62, shared
+   eqtn15             <- gamma, prd62, shared
+   eqtn17             <- prd62, shared
+   eqtn18             <- prd62, shared
+   eqtn19             <- eqtn17, prd62, shared
+   eqtn20             <- eqtn19, momentum, prd62, shared
+
+   eqtns              <- all sources
+
+execution sequence
+------------------
+
+   shared
+
+   prd62
+   prd67
+
+   adm
+   gamma
+   hamiltonian
+   momentum
+
+   eqtn10
+   eqtn09
+   eqtn11
+   eqtn12
+   eqtn15
+   eqtn17
+   eqtn18
+   eqtn19
+   eqtn20
+
+   eqtns

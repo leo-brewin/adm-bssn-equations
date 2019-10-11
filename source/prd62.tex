@@ -1,0 +1,126 @@
+\documentclass[12pt]{cdblatex}
+\usepackage{eqtns}
+
+\begin{document}
+
+\section*{PhysRevD.62.044034}
+
+\begin{cadabra}
+   from shared import *
+   import cdblib
+
+   jsonfile = 'prd62.json'
+   cdblib.create (jsonfile)
+
+   # -----------------------------------------------------------------------------------------------
+   # eqn 09
+   lhs := \partial_{t}{gBar_{i j}}.                                           # cdb(prd62.eq09.lhs,lhs)
+   rhs := -2 N ABar_{i j}.                                                    # cdb(prd62.eq09.rhs,rhs)
+
+   cdblib.put ('prd62.eq09.lhs',lhs,jsonfile)
+   cdblib.put ('prd62.eq09.rhs',rhs,jsonfile)
+
+   # -----------------------------------------------------------------------------------------------
+   # eqn 10
+   lhs := \partial_{t}{\phi}.                                                 # cdb(prd62.eq10.lhs,lhs)
+   rhs := -(1/6) N trK.                                                       # cdb(prd62.eq10.rhs,rhs)
+
+   cdblib.put ('prd62.eq10.lhs',lhs,jsonfile)
+   cdblib.put ('prd62.eq10.rhs',rhs,jsonfile)
+
+   # -----------------------------------------------------------------------------------------------
+   # eqn 11
+   lhs := \partial_{t}{K}.                                                    # cdb(prd62.eq11.lhs,lhs)
+   rhs := - g^{i j} D_{i j}{N}
+          + N (ABar_{i j} ABar^{i j} + (1/3) trK**2).                         # cdb(prd62.eq11.rhs,rhs)
+
+   cdblib.put ('prd62.eq11.lhs',lhs,jsonfile)
+   cdblib.put ('prd62.eq11.rhs',rhs,jsonfile)
+
+   # -----------------------------------------------------------------------------------------------
+   # eqn 12
+   lhs := \partial_{t}{ABar_{i j}}.                                           # cdb(prd62.eq12.lhs,lhs)
+   rhs := N (trK ABar_{i j} - 2 ABar_{i a} ABar^{a}_{j})
+         + \exp(-4\phi) (N R_{i j} - D_{i j}{N}
+                         - (1/3) g_{i j} (N R_{a b} - D_{a b}{N}) g^{a b}).   # cdb(prd62.eq12.rhs,rhs)
+
+   cdblib.put ('prd62.eq12.lhs',lhs,jsonfile)
+   cdblib.put ('prd62.eq12.rhs',rhs,jsonfile)
+
+   # -----------------------------------------------------------------------------------------------
+   # eqn 15
+   lhs := R^{\phi}_{i j}.                                                     # cdb(prd62.eq15.lhs,lhs)
+   rhs := - 2 DBar_{a b}{\phi}
+          - 2 gBar_{a b} gBar^{c d} DBar_{c d}{\phi}
+          + 4 DBar_{a}{\phi} DBar_{b}{\phi}
+          - 4 gBar_{a b} gBar^{c d} DBar_{c}{\phi} DBar_{d}{\phi}.
+                                                                              # cdb(prd62.eq15.rhs,rhs)
+
+   cdblib.put ('prd62.eq15.lhs',lhs,jsonfile)
+   cdblib.put ('prd62.eq15.rhs',rhs,jsonfile)
+
+   # -----------------------------------------------------------------------------------------------
+   # eqn 17
+   lhs := GammaBar^{i}.                                                       # cdb(prd62.eq17.lhs,lhs)
+   rhs := - \partial_{j}{gBar^{i j}}.                                         # cdb(prd62.eq17.rhs,rhs)
+
+   cdblib.put ('prd62.eq17.lhs',lhs,jsonfile)
+   cdblib.put ('prd62.eq17.rhs',rhs,jsonfile)
+
+   # -----------------------------------------------------------------------------------------------
+   # eqn 18
+   lhs := RBar_{i j}.                                                         # cdb(prd62.eq18.lhs,lhs)
+   rhs := - (1/2) gBar^{l m} \partial_{l m}{gBar_{a b}}
+          + (1/2) gBar_{k a} \partial_{b}{GammaBar^{k}}
+          + (1/2) gBar_{k b} \partial_{a}{GammaBar^{k}}
+          + (1/2) GammaBar^{k} GammaBar_{a b k}
+          + (1/2) GammaBar^{k} GammaBar_{b a k}
+          + gBar^{l m} gBar^{k e} (  GammaBar_{e l a} GammaBar_{b k m}
+                                   + GammaBar_{e l b} GammaBar_{a k m}
+                                   + GammaBar_{k a m} GammaBar_{e l b}).      # cdb(prd62.eq18.rhs,rhs)
+
+   cdblib.put ('prd62.eq18.lhs',lhs,jsonfile)
+   cdblib.put ('prd62.eq18.rhs',rhs,jsonfile)
+
+   # -----------------------------------------------------------------------------------------------
+   # eqn 19
+   lhs := \partial_{t}{GammaBar^{i}}.                                         # cdb(prd62.eq19.lhs,lhs)
+   rhs := - \partial_{j}{2 N ABar^{i j}}.                                     # cdb(prd62.eq19.rhs,rhs)
+
+   cdblib.put ('prd62.eq19.lhs',lhs,jsonfile)
+   cdblib.put ('prd62.eq19.rhs',rhs,jsonfile)
+
+   # -----------------------------------------------------------------------------------------------
+   # eqn 20
+   lhs := \partial_{t}{GammaBar^{i}}.                                         # cdb(prd62.eq20.lhs,lhs)
+   rhs := - 2 ABar^{i j} \partial_{j}{N}
+          + 2 N (  GammaBar^{i}_{j k} ABar^{k j}
+                 - (2/3) gBar^{i j} \partial_{j}{trK}
+                 + 6 ABar^{i j} \partial_{j}{\phi}).                          # cdb(prd62.eq20.rhs,rhs)
+
+   cdblib.put ('prd62.eq20.lhs',lhs,jsonfile)
+   cdblib.put ('prd62.eq20.rhs',rhs,jsonfile)
+
+\end{cadabra}
+
+\clearpage
+
+\begin{dgroup*}
+   \begin{dmath*} \cdb{prd62.eq09.lhs} = \Cdb*{prd62.eq09.rhs}\end{dmath*}
+   \begin{dmath*} \cdb{prd62.eq10.lhs} = \Cdb*{prd62.eq10.rhs}\end{dmath*}
+   \begin{dmath*} \cdb{prd62.eq11.lhs} = \Cdb*{prd62.eq11.rhs}\end{dmath*}
+   \begin{dmath*} \cdb{prd62.eq12.lhs} = \Cdb*{prd62.eq12.rhs}\end{dmath*}
+\end{dgroup*}
+
+\begin{dgroup*}
+   \begin{dmath*} \cdb{prd62.eq17.lhs} = \Cdb*{prd62.eq17.rhs}\end{dmath*}
+   \begin{dmath*} \cdb{prd62.eq19.lhs} = \Cdb*{prd62.eq19.rhs}\end{dmath*}
+   \begin{dmath*}                      = \Cdb*{prd62.eq20.rhs}\end{dmath*}
+\end{dgroup*}
+
+\begin{dgroup*}
+   \begin{dmath*} \cdb{prd62.eq15.lhs} = \Cdb*{prd62.eq15.rhs}\end{dmath*}
+   \begin{dmath*} \cdb{prd62.eq18.lhs} = \Cdb*[\hskip2cm\hfill]{prd62.eq18.rhs}\end{dmath*}
+\end{dgroup*}
+
+\end{document}

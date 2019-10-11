@@ -1,0 +1,48 @@
+\chardef\thehashcode=\catcode`\#	 % save catcode of hash (probably 6)
+\catcode`\#=11			             % set catcode for hash to be a letter (11)
+\cdbtag{eq27.101}{%
+\Gamma^{a}{}_{b c}%
+}
+\cdbtag{eq27.102}{%
+\frac{1}{2}g^{a e} \left(\partial_{b}{g_{e c}}+\partial_{c}{g_{b e}}-\partial_{e}{g_{b c}}\right)%
+}
+\cdbtag{eq27.103}{%
+\frac{1}{2}g^{a e} \left(\partial_{b}\left(\exp\left(4\phi\right) {\bar{g}}_{e c}\right)+\partial_{c}\left(\exp\left(4\phi\right) {\bar{g}}_{b e}\right)-\partial_{e}\left(\exp\left(4\phi\right) {\bar{g}}_{b c}\right)\right)%
+}
+\cdbtag{eq27.104}{%
+\frac{1}{2}\exp\left(-4\phi\right) {\bar{g}}^{a e} \left(\partial_{b}\left(\exp\left(4\phi\right) {\bar{g}}_{e c}\right)+\partial_{c}\left(\exp\left(4\phi\right) {\bar{g}}_{b e}\right)-\partial_{e}\left(\exp\left(4\phi\right) {\bar{g}}_{b c}\right)\right)%
+}
+\cdbtag{eq27.105}{%
+\frac{1}{2}\exp\left(-4\phi\right) {\bar{g}}^{a e} \partial_{b}\left(\exp\left(4\phi\right) {\bar{g}}_{e c}\right)+\frac{1}{2}\exp\left(-4\phi\right) {\bar{g}}^{a e} \partial_{c}\left(\exp\left(4\phi\right) {\bar{g}}_{b e}\right) - \frac{1}{2}\exp\left(-4\phi\right) {\bar{g}}^{a e} \partial_{e}\left(\exp\left(4\phi\right) {\bar{g}}_{b c}\right)%
+}
+\cdbtag{eq27.106}{%
+\frac{1}{2}\exp\left(-4\phi\right) {\bar{g}}^{a e} \left(\partial_{b}\left(\exp\left(4\phi\right)\right) {\bar{g}}_{e c}+\exp\left(4\phi\right) \partial_{b}{{\bar{g}}_{e c}}\right)+\frac{1}{2}\exp\left(-4\phi\right) {\bar{g}}^{a e} \left(\partial_{c}\left(\exp\left(4\phi\right)\right) {\bar{g}}_{b e}+\exp\left(4\phi\right) \partial_{c}{{\bar{g}}_{b e}}\right) - \frac{1}{2}\exp\left(-4\phi\right) {\bar{g}}^{a e} \left(\partial_{e}\left(\exp\left(4\phi\right)\right) {\bar{g}}_{b c}+\exp\left(4\phi\right) \partial_{e}{{\bar{g}}_{b c}}\right)%
+}
+\cdbtag{eq27.107}{%
+\frac{1}{2}\exp\left(-4\phi\right) {\bar{g}}^{a e} \left(4\exp\left(4\phi\right) \partial_{b}{\phi} {\bar{g}}_{e c}+\exp\left(4\phi\right) \partial_{b}{{\bar{g}}_{e c}}\right)+\frac{1}{2}\exp\left(-4\phi\right) {\bar{g}}^{a e} \left(4\exp\left(4\phi\right) \partial_{c}{\phi} {\bar{g}}_{b e}+\exp\left(4\phi\right) \partial_{c}{{\bar{g}}_{b e}}\right) - \frac{1}{2}\exp\left(-4\phi\right) {\bar{g}}^{a e} \left(4\exp\left(4\phi\right) \partial_{e}{\phi} {\bar{g}}_{b c}+\exp\left(4\phi\right) \partial_{e}{{\bar{g}}_{b c}}\right)%
+}
+\cdbtag{eq27.108}{%
+2\exp\left(-4\phi\right) {\bar{g}}^{a e} \exp\left(4\phi\right) \partial_{b}{\phi} {\bar{g}}_{e c}+\frac{1}{2}\exp\left(-4\phi\right) {\bar{g}}^{a e} \exp\left(4\phi\right) \partial_{b}{{\bar{g}}_{e c}}+2\exp\left(-4\phi\right) {\bar{g}}^{a e} \exp\left(4\phi\right) \partial_{c}{\phi} {\bar{g}}_{b e}+\frac{1}{2}\exp\left(-4\phi\right) {\bar{g}}^{a e} \exp\left(4\phi\right) \partial_{c}{{\bar{g}}_{b e}}-2\exp\left(-4\phi\right) {\bar{g}}^{a e} \exp\left(4\phi\right) \partial_{e}{\phi} {\bar{g}}_{b c} - \frac{1}{2}\exp\left(-4\phi\right) {\bar{g}}^{a e} \exp\left(4\phi\right) \partial_{e}{{\bar{g}}_{b c}}%
+}
+\cdbtag{eq27.109}{%
+2{\bar{g}}^{a e} \partial_{b}{\phi} {\bar{g}}_{e c}+\frac{1}{2}{\bar{g}}^{a e} \partial_{b}{{\bar{g}}_{e c}}+2{\bar{g}}^{a e} \partial_{c}{\phi} {\bar{g}}_{b e}+\frac{1}{2}{\bar{g}}^{a e} \partial_{c}{{\bar{g}}_{b e}}-2{\bar{g}}^{a e} \partial_{e}{\phi} {\bar{g}}_{b c} - \frac{1}{2}{\bar{g}}^{a e} \partial_{e}{{\bar{g}}_{b c}}%
+}
+\cdbtag{eq27.110}{%
+2{\bar{g}}^{a e} \partial_{b}{\phi} {\bar{g}}_{e c}+2{\bar{g}}^{a e} \partial_{c}{\phi} {\bar{g}}_{b e}-2{\bar{g}}^{a e} \partial_{e}{\phi} {\bar{g}}_{b c}+{\bar{\Gamma}}^{a}{}_{b c}%
+}
+\cdbtag{eq27.111}{%
+2{\bar{g}}^{a}{}_{c} \partial_{b}{\phi}+2{\bar{g}}^{a e} \partial_{c}{\phi} {\bar{g}}_{b e}-2{\bar{g}}^{a e} \partial_{e}{\phi} {\bar{g}}_{b c}+{\bar{\Gamma}}^{a}{}_{b c}%
+}
+\cdbtag{eq27.112}{%
+2{\bar{g}}^{a}{}_{c} \partial_{b}{\phi}+2{\bar{g}}^{a}{}_{b} \partial_{c}{\phi}-2{\bar{g}}^{a e} \partial_{e}{\phi} {\bar{g}}_{b c}+{\bar{\Gamma}}^{a}{}_{b c}%
+}
+\cdbtag{prd67.eq27.lcb}{%
+2{\bar{g}}^{a}{}_{c} \partial_{b}{\phi}+2{\bar{g}}^{a}{}_{b} \partial_{c}{\phi}-2{\bar{g}}^{a e} \partial_{e}{\phi} {\bar{g}}_{b c}+{\bar{\Gamma}}^{a}{}_{b c}%
+}
+\cdbtag{prd67.eq27.prd}{%
+{\bar{\Gamma}}^{a}{}_{b c}+2{\bar{g}}^{a}{}_{c} \partial_{b}{\phi}+2{\bar{g}}^{a}{}_{b} \partial_{c}{\phi}-2{\bar{g}}_{b c} {\bar{g}}^{a e} \partial_{e}{\phi}%
+}
+\cdbtag{prd67.eq27.chk}{%
+0%
+}
+\catcode`\#=\thehashcode          % restore original catcode for hash

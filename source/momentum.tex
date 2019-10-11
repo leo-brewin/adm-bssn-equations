@@ -1,0 +1,190 @@
+\documentclass[12pt]{cdblatex}
+\usepackage{eqtns}
+
+\begin{document}
+
+\section*{PhysRevD.67.084023 equation (20)}
+
+\begin{cadabra}
+   from shared import *
+   import cdblib
+
+   jsonfile = 'momentum.json'
+
+   defG2GBar = cdblib.get ('defG2GBar','gamma.json')
+
+   # --------------------------------------------------------------------------
+   # Momentum constraint pt.1
+
+   Mom := D_{j}{K^{i j} - g^{i j} trK}.                                       # cdb(Mom.101,Mom)
+
+   defDgD := D_{a}{g_{b c}} -> 0.
+   defDgU := D_{a}{g^{b c}} -> 0.
+
+   defDtrK   := D_{a}{trK} -> \partial_{a}{trK}.
+   defDexp   := D_{a}{\exp(-4\phi)} -> -4\exp(-4\phi) \partial_{a}{\phi}.
+
+   distribute   (Mom)                                                         # cdb(Mom.102,Mom)
+   product_rule (Mom)                                                         # cdb(Mom.103,Mom)
+   substitute   (Mom, defDgU)                                                 # cdb(Mom.104,Mom)
+
+   defK2ABarU := K^{i j} -> \exp(-4\phi) ABar^{i j} + (1/3) g^{i j} trK.
+
+   substitute   (Mom, defK2ABarU)                                             # cdb(Mom.105,Mom)
+   distribute   (Mom)                                                         # cdb(Mom.106,Mom)
+   product_rule (Mom)                                                         # cdb(Mom.107,Mom)
+   substitute   (Mom, defDtrK)                                                # cdb(Mom.108,Mom)
+   substitute   (Mom, defDgU)                                                 # cdb(Mom.109,Mom)
+   substitute   (Mom, defDexp)                                                # cdb(Mom.110,Mom)
+
+\end{cadabra}
+
+\clearpage
+
+\begin{dgroup*}[spread=5pt]
+   \begin{dmath*}
+      {\cal D}^{j}
+         = \Cdb*{Mom.101}
+         = \Cdb*{Mom.102}
+         = \Cdb*{Mom.103}
+         = \Cdb*{Mom.104}
+         = \Cdb*{Mom.105}
+         = \Cdb*{Mom.106}
+         = \Cdb*{Mom.107}
+         = \Cdb*{Mom.108}
+         = \Cdb*{Mom.109}
+         = \Cdb*{Mom.110}
+   \end{dmath*}
+\end{dgroup*}
+
+\clearpage
+
+\begin{cadabra}
+   # --------------------------------------------------------------------------
+   # Momentum constraint pt.2
+
+   confMom := \exp(4\phi) @(Mom).
+
+   defG2GBarU := g^{i j} -> \exp(-4\phi) gBar^{i j}.
+
+   distribute   (confMom)                                                     # cdb(confMom.101,confMom)
+   substitute   (confMom, defG2GBarU)                                         # cdb(confMom.102,confMom)
+   map_sympy    (confMom, "simplify")                                         # cdb(confMom.103,confMom)
+
+   defDAabU  := D_{a}{ABar^{b c}} ->  \partial_{a}{ABar^{b c}}
+                                    + \Gamma^{b}_{i a} ABar^{i c}
+                                    + \Gamma^{c}_{i a} ABar^{b i}.
+
+   substitute     (confMom, defDAabU)                                         # cdb(confMom.104,confMom)
+   substitute     (confMom, defG2GBar)                                        # cdb(confMom.105,confMom)
+   distribute     (confMom)                                                   # cdb(confMom.106,confMom)
+   confMom = product_sort (confMom)                                           # cdb(confMom.107,confMom)
+   rename_dummies (confMom)                                                   # cdb(confMom.108,confMom)
+   canonicalise   (confMom)                                                   # cdb(confMom.109,confMom)
+   substitute     (confMom, $gBar^{i}_{i} -> 3$)                              # cdb(confMom.110,confMom)
+   substitute     (confMom, $gBar_{i j} ABar^{i j} -> 0$)                     # cdb(confMom.111,confMom)
+   substitute     (confMom, $gBar_{a i} gBar^{i b} -> gBar_{a}^{b}$)          # cdb(confMom.112,confMom)
+   substitute     (confMom, $GammaBar^{b}_{a b} -> 0$)                        # cdb(confMom.113,confMom) # follows from det gBar = 1
+   eliminate_kronecker (confMom)                                              # cdb(confMom.114,confMom)
+   rename_dummies (confMom)
+   canonicalise   (confMom)                                                   # cdb(confMom.115,confMom)
+
+   cdblib.put ('confMom',confMom,jsonfile)
+\end{cadabra}
+
+\clearpage
+
+\begin{dgroup*}[spread=5pt]
+   \begin{dmath*}
+      \exp(4\phi) {\cal D}^{j}
+         = \Cdb*{confMom.101}
+         = \Cdb*{confMom.102}
+         = \Cdb*{confMom.103}
+         = \Cdb*{confMom.104}
+         = \Cdb*[\hskip3.0cm\hfill]{confMom.105}
+         = \Cdb*[\hskip2.0cm\hfill]{confMom.106}
+         = \Cdb*[\hskip2.0cm\hfill]{confMom.107}
+         = \Cdb*[\hskip2.0cm\hfill]{confMom.108}
+         = \Cdb*[\hskip2.5cm\hfill]{confMom.109}
+         = \Cdb*{confMom.110}
+         = \Cdb*{confMom.111}
+   \end{dmath*}
+\end{dgroup*}
+
+\clearpage
+
+\begin{dgroup*}[spread=5pt]
+   \begin{dmath*}
+      \exp(4\phi) {\cal D}^{j}
+         = \Cdb*{confMom.112}
+         = \Cdb*{confMom.113}
+         = \Cdb*{confMom.114}
+         = \Cdb*{confMom.115}
+   \end{dmath*}
+\end{dgroup*}
+
+\clearpage
+
+\begin{cadabra}
+   tmpA := @(confMom).                                              # cdb(confMom.201,tmpA)
+   tmpB := @(confMom).
+
+   X^{b c}_{a}::Weight(label=numX).
+
+   Xbca := \partial_{a}{ABar^{b c}}.                                # cdb(confMom.202,Xbca)
+
+   foo := \partial_{a}{ABar^{b c}} -> X^{b c}_{a}.
+   bah := X^{b c}_{a} -> \partial_{a}{ABar^{b c}}.
+
+   substitute  (tmpA, foo)                                          # cdb(confMom.203,tmpA)
+   substitute  (tmpB, foo)                                          # cdb(confMom.204,tmpB)
+   drop_weight (tmpA, $numX=1$)                                     # cdb(confMom.205,tmpA)
+   keep_weight (tmpB, $numX=1$)                                     # cdb(confMom.206,tmpB)
+   substitute  (tmpB, bah)                                          # cdb(confMom.207,tmpB)
+
+   tmpC := - @(tmpA).                                               # cdb(confMom.208,tmpC)
+
+   defMomSub := @(tmpB) -> @(tmpC).                                 # cdb(confMom.209,defMomSub)
+
+   cdblib.put ('defMomSub',defMomSub,jsonfile)
+\end{cadabra}
+
+\clearpage
+
+\begin{dgroup*}
+   \begin{dmath*} 0 =  \Cdb*{confMom.201} \end{dmath*}
+   \begin{dmath*} 0 =  \Cdb*{confMom.203} \end{dmath*}
+   \begin{dmath*}
+      \cdb{confMom.202} = \Cdb*{confMom.206}
+                        = \Cdb*{confMom.208}
+   \end{dmath*}
+   \begin{dmath*} \Cdb*{confMom.209} \end{dmath*}
+\end{dgroup*}
+
+\clearpage
+
+\begin{cadabra}
+   # --------------------------------------------------------------------------
+   # Check against prd67.
+
+   foo := @(confMom).                                   # cdb(prd67.eq20.lcb,foo)
+   bah  = cdblib.get('prd67.eq20.rhs','prd67.json')     # cdb(prd67.eq20.prd,bah)
+
+   diff := @(foo) - @(bah).
+
+   distribute     (diff)
+   diff = product_sort (diff)
+   rename_dummies (diff)
+   map_sympy      (diff, "simplify")
+   canonicalise   (diff)                                # cdb(prd67.eq20.chk,diff)
+\end{cadabra}
+
+% \clearpage
+
+\begin{dgroup*}
+   \begin{dmath*} \cdb*{prd67.eq20.lcb} \end{dmath*}
+   \begin{dmath*} \cdb*{prd67.eq20.prd} \end{dmath*}
+   \begin{dmath*} \cdb*{prd67.eq20.chk} \end{dmath*}
+\end{dgroup*}
+
+\end{document}

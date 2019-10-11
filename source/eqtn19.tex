@@ -1,0 +1,82 @@
+\documentclass[12pt]{cdblatex}
+\usepackage{eqtns}
+
+\begin{document}
+
+\section*{PhysRevD.62.044034 equation (19)}
+
+\begin{cadabra}
+   from shared import *
+   import cdblib
+
+   jsonfile = 'eqtn19.json'
+   cdblib.create (jsonfile)
+
+   defGiBar = cdblib.get ('defGiBar','eqtn17.json')
+
+   # --------------------------------------------------------------------------
+   # DGiBarDt pt.1
+
+   dotgBar_{a b}::Symmetric.
+   dotgBar^{a b}::Symmetric.
+   dotgBar{#}::LaTeXForm("{\bar{dg}}").
+
+   dotGiBar := \partial_{t}{GammaBar^{i}}.            # cdb (eq19.101,dotGiBar)
+
+   substitute   (dotGiBar, defGiBar)                  # cdb (eq19.102,dotGiBar)
+   substitute   (dotGiBar, $\partial_{t a}{gBar^{i a}} -> \partial_{a}{dotgBar^{i a}}$)
+                                                      # cdb (eq19.103,dotGiBar)
+
+   defdotgBarD := dotgBar_{i j} -> -2 N ABar_{i j}.
+   defdotgBarU := dotgBar^{i j} ->  2 N ABar^{i j}.
+   # defABarD2ABarU := ABar_{i j} -> ABar^{a b} gBar_{a i} gBar_{b j}.
+
+   substitute   (dotGiBar, defdotgBarU )              # cdb (eq19.104,dotGiBar)
+   product_rule (dotGiBar)                            # cdb (eq19.105,dotGiBar)
+
+   dotGiBar = product_sort (dotGiBar)                 # cdb (eq19.106,dotGiBar)
+
+   cdblib.put ('dotGiBar',dotGiBar,jsonfile)
+\end{cadabra}
+
+\clearpage
+
+\begin{dgroup*}[spread=5pt]
+   \begin{dmath*}
+      \cdb{eq19.101}
+         = \Cdb*{eq19.102}
+         = \Cdb*{eq19.103}
+         = \Cdb*{eq19.104}
+         = \Cdb*{eq19.105}
+         = \Cdb*{eq19.106}
+   \end{dmath*}
+\end{dgroup*}
+
+\clearpage
+
+\begin{cadabra}
+   # --------------------------------------------------------------------------
+   # Check against prd62.
+
+   foo := @(dotGiBar).                                  # cdb (eq19.lcb,foo)
+   bah  = cdblib.get('prd62.eq19.rhs','prd62.json')     # cdb (eq19.prd,bah)
+
+   diff := @(foo) - @(bah).
+
+   distribute     (diff)
+   product_rule   (diff)
+   diff = product_sort (diff)
+   rename_dummies (diff)
+   map_sympy      (diff, "simplify")
+   canonicalise   (diff)                                # cdb (eq19.chk,diff)
+\end{cadabra}
+
+% \clearpage
+
+\begin{dgroup*}
+   \begin{dmath*} \cdb*{eq19.lcb} \end{dmath*}
+   \begin{dmath*} \cdb*{eq19.prd} \end{dmath*}
+   \begin{dmath*} \cdb*{eq19.chk} \end{dmath*}
+\end{dgroup*}
+
+\end{document}

@@ -1,0 +1,88 @@
+\documentclass[12pt]{cdblatex}
+\usepackage{eqtns}
+
+\begin{document}
+
+\section*{PhysRevD.67.084023 equation (27)}
+
+\begin{cadabra}
+   from shared import *
+   import cdblib
+
+   jsonfile = 'gamma.json'
+   cdblib.create (jsonfile)
+
+   # --------------------------------------------------------------------------
+   # Gamma in terms of GammaBar and phi, see prd67 eqn 27
+
+   Gamma := \Gamma^{a}_{b c}.                                        # cdb (eq27.101,Gamma)
+
+   substitute   (Gamma, defGamma)                                    # cdb (eq27.102,Gamma)
+   substitute   (Gamma, defG2GBarD)                                  # cdb (eq27.103,Gamma)
+   substitute   (Gamma, defG2GBarU)                                  # cdb (eq27.104,Gamma)
+   distribute   (Gamma)                                              # cdb (eq27.105,Gamma)
+   product_rule (Gamma)                                              # cdb (eq27.106,Gamma)
+   substitute   (Gamma, dexp)                                        # cdb (eq27.107,Gamma)
+   distribute   (Gamma)                                              # cdb (eq27.108,Gamma)
+   map_sympy    (Gamma, "simplify")                                  # cdb (eq27.109,Gamma)
+
+   foo := gBar^{a e} \partial_{e}{gBar_{b c}} ->
+          - 2 GammaBar^{a}_{b c}
+          + gBar^{a e} \partial_{b}{gBar_{e c}}
+          + gBar^{a e} \partial_{c}{gBar_{b e}}.
+
+   substitute (Gamma, foo)                                           # cdb (eq27.110,Gamma)
+   substitute (Gamma, $gBar^{a i} gBar_{i b} -> gBar^{a}_{b}$)       # cdb (eq27.111,Gamma)
+   substitute (Gamma, $gBar^{a i} gBar_{b i} -> gBar^{a}_{b}$)       # cdb (eq27.112,Gamma)
+
+   defG2GBar :=  \Gamma^{a}_{b c} -> @(Gamma).
+
+   cdblib.put ('defG2GBar',defG2GBar,jsonfile)
+\end{cadabra}
+
+\clearpage
+
+\begin{dgroup*}[spread=5pt]
+   \begin{dmath*}
+      \cdb{eq27.101}
+         = \Cdb*{eq27.102}
+         = \Cdb*{eq27.103}
+         = \Cdb*{eq27.104}
+         = \Cdb*{eq27.105}
+         = \Cdb*{eq27.106}
+         = \Cdb*{eq27.107}
+         = \Cdb*{eq27.108}
+         = \Cdb*{eq27.109}
+         = \Cdb*{eq27.110}
+         = \Cdb*{eq27.111}
+         = \Cdb*{eq27.112}
+   \end{dmath*}
+\end{dgroup*}
+
+\clearpage
+
+\begin{cadabra}
+   # --------------------------------------------------------------------------
+   # Check against prd67.
+
+   foo := @(Gamma).                                     # cdb(prd67.eq27.lcb,foo)
+   bah  = cdblib.get('prd67.eq27.rhs','prd67.json')     # cdb(prd67.eq27.prd,bah)
+
+   diff := @(foo) - @(bah).
+
+   distribute     (diff)
+   diff = product_sort (diff)
+   rename_dummies (diff)
+   map_sympy      (diff, "simplify")
+   canonicalise   (diff)                                # cdb(prd67.eq27.chk,diff)
+\end{cadabra}
+
+% \clearpage
+
+\begin{dgroup*}
+   \begin{dmath*} \cdb*{prd67.eq27.lcb} \end{dmath*}
+   \begin{dmath*} \cdb*{prd67.eq27.prd} \end{dmath*}
+   \begin{dmath*} \cdb*{prd67.eq27.chk} \end{dmath*}
+\end{dgroup*}
+
+\end{document}

@@ -1,0 +1,122 @@
+import cadabra2
+from cadabra2_defaults import *
+__cdbkernel__ = cadabra2.__cdbkernel__
+
+{t,x,y,z}::Coordinate.
+{a,b,c,d,e,f,i,j,k,l,m,n,o,p,q,r,s,u#}::Indices(position=independent,values={t,x,y,z}).
+
+\partial{#}::PartialDerivative.
+D{#}::Derivative.
+DBar{#}::Derivative.
+DBar{#}::LaTeXForm("{\bar{D}}").
+
+N::Depends(t,x,y,z).
+
+g_{a b}::Symmetric.
+g^{a b}::Symmetric.
+g_{a}^{b}::KroneckerDelta.
+g^{a}_{b}::KroneckerDelta.
+
+# g_{a b}::Depends(t,x,y,z).
+# g^{a b}::Depends(t,x,y,z).
+
+gBar_{a b}::Symmetric.
+gBar^{a b}::Symmetric.
+gBar_{a}^{b}::KroneckerDelta.
+gBar^{a}_{b}::KroneckerDelta.
+gBar{#}::LaTeXForm("{\bar{g}}").
+
+# gBar_{a b}::Depends(t,x,y,z).
+# gBar^{a b}::Depends(t,x,y,z).
+
+# A_{a b}::Depends(t,x,y,z).
+# A^{a b}::Depends(t,x,y,z).
+
+\phi::Depends(t,x,y,z).
+# detg::Depends(t,x,y,z).
+detg::LaTeXForm("{g}").
+
+A_{a b}::Symmetric.
+K_{a b}::Symmetric.
+R_{a b}::Symmetric.
+
+ABar_{a b}::Symmetric.
+ABar^{a b}::Symmetric.
+ABar{#}::LaTeXForm("{\bar{A}}").
+
+RBar{#}::LaTeXForm("{\bar{R}}").
+
+GammaBar{#}::LaTeXForm("{\bar{\Gamma}}").
+GammaBar^{a}_{b c}::TableauSymmetry(shape={2}, indices={1,2}).
+GammaBar_{a b c}::TableauSymmetry(shape={2}, indices={1,2}).
+
+trK::LaTeXForm("{{\rm tr} K}").
+
+dsin := \partial_{a?}{\sin(A?)} ->  \cos(A?)\partial_{a?}{A?}.
+dcos := \partial_{a?}{\cos(A?)} -> -\sin(A?)\partial_{a?}{A?}.
+dexp := \partial_{a?}{\exp(A?)} ->  \exp(A?)\partial_{a?}{A?}.
+dlog := \partial_{a?}{\log(A?)} ->    (1/A?)\partial_{a?}{A?}.
+
+defG2GBarD := g_{a b} -> \exp(4\phi) gBar_{a b}.
+defG2GBarU := g^{a b} -> \exp(-4\phi) gBar^{a b}.
+
+defGamma := \Gamma^{a}_{b c} ->
+            (1/2) g^{a e} (   \partial_{b}{g_{e c}}
+                            + \partial_{c}{g_{b e}}
+                            - \partial_{e}{g_{b c}}).
+
+defRiem := R^{a}_{b c d} ->
+           \partial_{c}{\Gamma^{a}_{b d}} + \Gamma^{a}_{e c} \Gamma^{e}_{b d}
+         - \partial_{d}{\Gamma^{a}_{b c}} - \Gamma^{a}_{e d} \Gamma^{e}_{b c}.
+
+defRab := R_{a b} -> R^{c}_{a c b}.
+
+# This is my trick to sort product terms, I use it in prefernce to Cadabra's own sort_product
+# LCB: fix this -- must move the \partial{foo} ahead of foo
+# LCB: really? why?
+def product_sort (ex):
+    substitute (ex,$ N                            -> A001           $)
+    substitute (ex,$ trK                          -> A002           $)
+    substitute (ex,$ A_{a b}                      -> A003_{a b}     $)
+    substitute (ex,$ A^{a b}                      -> A004^{a b}     $)
+    substitute (ex,$ ABar_{a b}                   -> A005_{a b}     $)
+    substitute (ex,$ ABar^{a b}                   -> A006^{a b}     $)
+    substitute (ex,$ g_{a b}                      -> A007_{a b}     $)
+    substitute (ex,$ g^{a b}                      -> A008^{a b}     $)
+    substitute (ex,$ gBar_{a b}                   -> A009_{a b}     $)
+    substitute (ex,$ gBar^{a b}                   -> A010^{a b}     $)
+    substitute (ex,$ GammaBar^{a}                 -> A011^{a}       $)
+    substitute (ex,$ GammaBar^{a}_{b c}           -> A012^{a}_{b c} $)
+    substitute (ex,$ GammaBar_{a b c}             -> A013_{a b c}   $)
+    substitute (ex,$ \partial_{a}{N}              -> A014_{a}       $)
+    substitute (ex,$ \partial_{a b}{N}            -> A015_{a b}     $)
+    substitute (ex,$ \partial_{a}{\phi}           -> A016_{a}       $)
+    substitute (ex,$ \partial_{a b}{\phi}         -> A017_{a b}     $)
+    substitute (ex,$ \partial_{a}{GammaBar^{b}}   -> A018_{a}^{b}   $)
+    substitute (ex,$ \partial_{a}{gBar_{c d}}     -> A019_{a c d}   $)
+    substitute (ex,$ \partial_{a}{gBar^{c d}}     -> A020_{a}^{c d} $)
+    substitute (ex,$ \partial_{a b}{gBar_{c d}}   -> A021_{a b c d} $)
+    sort_product   (ex)
+    rename_dummies (ex)
+    substitute (ex,$ A001                         -> N                          $)
+    substitute (ex,$ A002                         -> trK                        $)
+    substitute (ex,$ A003_{a b}                   -> A_{a b}                    $)
+    substitute (ex,$ A004^{a b}                   -> A^{a b}                    $)
+    substitute (ex,$ A005_{a b}                   -> ABar_{a b}                 $)
+    substitute (ex,$ A006^{a b}                   -> ABar^{a b}                 $)
+    substitute (ex,$ A007_{a b}                   -> g_{a b}                    $)
+    substitute (ex,$ A008^{a b}                   -> g^{a b}                    $)
+    substitute (ex,$ A009_{a b}                   -> gBar_{a b}                 $)
+    substitute (ex,$ A010^{a b}                   -> gBar^{a b}                 $)
+    substitute (ex,$ A011^{a}                     -> GammaBar^{a}               $)
+    substitute (ex,$ A012^{a}_{b c}               -> GammaBar^{a}_{b c}         $)
+    substitute (ex,$ A013_{a b c}                 -> GammaBar_{a b c}           $)
+    substitute (ex,$ A014_{a}                     -> \partial_{a}{N}            $)
+    substitute (ex,$ A015_{a b}                   -> \partial_{a b}{N}          $)
+    substitute (ex,$ A016_{a}                     -> \partial_{a}{\phi}         $)
+    substitute (ex,$ A017_{a b}                   -> \partial_{a b}{\phi}       $)
+    substitute (ex,$ A018_{a}^{b}                 -> \partial_{a}{GammaBar^{b}} $)
+    substitute (ex,$ A019_{a c d}                 -> \partial_{a}{gBar_{c d}}   $)
+    substitute (ex,$ A020_{a}^{c d}               -> \partial_{a}{gBar^{c d}}   $)
+    substitute (ex,$ A021_{a b c d}               -> \partial_{a b}{gBar_{c d}} $)
+    return ex

@@ -1,0 +1,118 @@
+\documentclass[12pt]{cdblatex}
+\usepackage{eqtns}
+
+\begin{document}
+
+\section*{PhysRevD.62.044034 equation (11)}
+
+\begin{cadabra}
+   from shared import *
+   import cdblib
+
+   jsonfile = 'eqtn11.json'
+   cdblib.create (jsonfile)
+
+   DhijDt = cdblib.get ('adm.DhijDt','adm.json')
+   DKijDt = cdblib.get ('adm.DKijDt','adm.json')
+
+   # --------------------------------------------------------------------------
+
+   trK    := trK -> g^{i j} K_{i j}.
+   gdotK  := g^{i j} K_{i j} -> trK.
+
+   Kup := g^{i a} g^{j b} K_{i j} -> K^{a b}.
+
+   Ham := g^{i j} R_{i j} -> K_{i j} K^{i j} - trK trK.
+
+   Kij := K_{i j} -> A_{i j} + (1/3) g_{i j} trK.   # prd62 eqn 07
+   Lij := K^{i j} -> A^{i j} + (1/3) g^{i j} trK.   # prd62 eqn 07
+
+   trA1 := A_{i j} g^{i j} -> 0.                    # Aij is trace free
+   trA2 := A^{i j} g_{i j} -> 0.
+
+   Asq := A_{i j} A^{i j} -> ABar_{i j} ABar^{i j}.
+
+   gdotg := g_{i j} g^{i j} -> 3.
+
+   # --------------------------------------------------------------------------
+   # dK/dt
+
+   dotK := \partial_{t}{trK}.          # cdb (eq11.101,dotK)
+
+   substitute     (dotK,trK)           # cdb (eq11.102,dotK)
+   product_rule   (dotK)               # cdb (eq11.103,dotK)
+   substitute     (dotK,DhijDt)        # cdb (eq11.104,dotK)
+   substitute     (dotK,DKijDt)        # cdb (eq11.105,dotK)
+   distribute     (dotK)               # cdb (eq11.106,dotK)
+   substitute     (dotK,gdotK)         # cdb (eq11.107,dotK)
+   substitute     (dotK,Kup)           # cdb (eq11.108,dotK)
+   dotK = product_sort (dotK)          # cdb (eq11.109,dotK)
+   substitute     (dotK,Ham)           # cdb (eq11.110,dotK)
+   distribute     (dotK)               # cdb (eq11.111,dotK)
+   substitute     (dotK,Kij)           # cdb (eq11.112,dotK)
+   substitute     (dotK,Lij)           # cdb (eq11.113,dotK)
+   distribute     (dotK)               # cdb (eq11.114,dotK)
+   substitute     (dotK,trA1)          # cdb (eq11.115,dotK)
+   substitute     (dotK,trA2)          # cdb (eq11.116,dotK)
+   substitute     (dotK,Asq)           # cdb (eq11.117,dotK)
+   substitute     (dotK,gdotg)         # cdb (eq11.118,dotK)
+   map_sympy      (dotK, "simplify")   # cdb (eq11.119,dotK)
+
+   DKDt := \partial_{t}{trK} -> @(dotK).
+
+   cdblib.put ('DKDt',DKDt,jsonfile)
+\end{cadabra}
+
+\clearpage
+
+\begin{dgroup*}[spread=5pt]
+   \begin{dmath*}
+      \cdb{eq11.101}
+         = \Cdb*{eq11.102}
+         = \Cdb*{eq11.103}
+         = \Cdb*{eq11.104}
+         = \Cdb*{eq11.105}
+         = \Cdb*{eq11.106}
+         = \Cdb*{eq11.107}
+         = \Cdb*{eq11.108}
+         = \Cdb*{eq11.109}
+         = \Cdb*{eq11.110}
+         = \Cdb*{eq11.111}
+         = \Cdb*{eq11.112}
+         = \Cdb*{eq11.113}
+         = \Cdb*{eq11.114}
+         = \Cdb*{eq11.115}
+         = \Cdb*{eq11.116}
+         = \Cdb*{eq11.117}
+         = \Cdb*{eq11.118}
+         = \Cdb*{eq11.119}
+   \end{dmath*}
+\end{dgroup*}
+
+\clearpage
+
+\begin{cadabra}
+   # --------------------------------------------------------------------------
+   # Check against prd62.
+
+   foo := @(dotK).                                      # cdb(eq11.lcb,foo)
+   bah  = cdblib.get('prd62.eq11.rhs','prd62.json')     # cdb(eq11.prd,bah)
+
+   diff := @(foo) - @(bah).
+
+   distribute     (diff)
+   diff = product_sort (diff)
+   rename_dummies (diff)
+   map_sympy      (diff, "simplify")
+   canonicalise   (diff)                                # cdb(eq11.chk,diff)
+\end{cadabra}
+
+% \clearpage
+
+\begin{dgroup*}
+   \begin{dmath*} \cdb*{eq11.lcb} \end{dmath*}
+   \begin{dmath*} \cdb*{eq11.prd} \end{dmath*}
+   \begin{dmath*} \cdb*{eq11.chk} \end{dmath*}
+\end{dgroup*}
+
+\end{document}

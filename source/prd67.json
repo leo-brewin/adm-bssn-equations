@@ -1,0 +1,8 @@
+{
+  "prd67.eq19.lhs": "0",
+  "prd67.eq19.rhs": "R-ABar_{a b} ABar^{a b} +  2/3 (trK)**2",
+  "prd67.eq20.lhs": "0",
+  "prd67.eq20.rhs": "\\partial_{a}(ABar^{i a}) + 6ABar^{i a} \\partial_{a}(\\phi) + ABar^{a b} GammaBar^{i}_{a b} -  2/3 gBar^{i a} \\partial_{a}(trK)",
+  "prd67.eq27.lhs": "\\Gamma^{a}_{b c}",
+  "prd67.eq27.rhs": "GammaBar^{a}_{b c} + 2gBar^{a}_{c} \\partial_{b}(\\phi) + 2gBar^{a}_{b} \\partial_{c}(\\phi)-2gBar_{b c} gBar^{a e} \\partial_{e}(\\phi)"
+}

@@ -1,0 +1,4 @@
+{
+  "confMom": "6ABar^{i a} \\partial_{a}(\\phi) + \\partial_{a}(ABar^{i a}) + ABar^{a b} GammaBar^{i}_{a b} -  2/3 gBar^{i a} \\partial_{a}(trK)",
+  "defMomSub": "\\partial_{a}(ABar^{i a}) -> -6ABar^{i a} \\partial_{a}(\\phi)-ABar^{a b} GammaBar^{i}_{a b} +  2/3 gBar^{i a} \\partial_{a}(trK)"
+}

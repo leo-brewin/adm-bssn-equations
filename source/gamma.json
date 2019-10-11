@@ -1,0 +1,3 @@
+{
+  "defG2GBar": "\\Gamma^{a}_{b c} -> 2gBar^{a}_{c} \\partial_{b}(\\phi) + 2gBar^{a}_{b} \\partial_{c}(\\phi)-2gBar^{a e} \\partial_{e}(\\phi) gBar_{b c} + GammaBar^{a}_{b c}"
+}

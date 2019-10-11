@@ -1,0 +1,83 @@
+\documentclass[12pt]{cdblatex}
+\usepackage{eqtns}
+
+\begin{document}
+
+\section*{PhysRevD.62.044034 equation (17)}
+
+\begin{cadabra}
+   from shared import *
+   import cdblib
+
+   jsonfile = 'eqtn17.json'
+   cdblib.create (jsonfile)
+
+   # --------------------------------------------------------------------------
+   defGammaBar := GammaBar^{a}_{b c} ->
+                  (1/2) gBar^{a e} (   \partial_{b}{gBar_{e c}}
+                                     + \partial_{c}{gBar_{b e}}
+                                     - \partial_{e}{gBar_{b c}}).
+
+   foo := \partial_{a}{gBar_{b c}} gBar^{i b} gBar^{j c} -> - \partial_{a}{gBar^{i j}}.
+   bah := \partial_{a}{gBar_{b c}} gBar^{b c} -> 0.   # follows from det gBar = 1
+
+   # --------------------------------------------------------------------------
+   # GiBar
+
+   GiBar := gBar^{j k} GammaBar^{i}_{j k}.            # cdb (eq17.101,GiBar)
+
+   substitute     (GiBar, defGammaBar)                # cdb (eq17.102,GiBar)
+   distribute     (GiBar)                             # cdb (eq17.103,GiBar)
+   GiBar = product_sort (GiBar)                       # cdb (eq17.104,GiBar)
+   rename_dummies (GiBar)                             # cdb (eq17.105,GiBar)
+   canonicalise   (GiBar)                             # cdb (eq17.106,GiBar)
+   substitute     (GiBar, foo)                        # cdb (eq17.107,GiBar)
+   substitute     (GiBar, bah)                        # cdb (eq17.108,GiBar)
+
+   defGiBar := GammaBar^{i} -> @(GiBar).
+
+   cdblib.put ('defGiBar',defGiBar,jsonfile)
+\end{cadabra}
+
+\clearpage
+
+\begin{dgroup*}[spread=5pt]
+   \begin{dmath*}
+      \cdb{eq17.101}
+         = \Cdb*{eq17.102}
+         = \Cdb*{eq17.103}
+         = \Cdb*{eq17.104}
+         = \Cdb*{eq17.105}
+         = \Cdb*{eq17.106}
+         = \Cdb*{eq17.107}
+         = \Cdb*{eq17.108}
+   \end{dmath*}
+\end{dgroup*}
+
+\clearpage
+
+\begin{cadabra}
+   # --------------------------------------------------------------------------
+   # Check against prd62.
+
+   foo := @(GiBar).                                     # cdb(eq17.lcb,foo)
+   bah  = cdblib.get('prd62.eq17.rhs','prd62.json')     # cdb(eq17.prd,bah)
+
+   diff := @(foo) - @(bah).
+
+   distribute     (diff)
+   diff = product_sort (diff)
+   rename_dummies (diff)
+   map_sympy      (diff, "simplify")
+   canonicalise   (diff)                                # cdb(eq17.chk,diff)
+\end{cadabra}
+
+% \clearpage
+
+\begin{dgroup*}
+   \begin{dmath*} \cdb*{eq17.lcb} \end{dmath*}
+   \begin{dmath*} \cdb*{eq17.prd} \end{dmath*}
+   \begin{dmath*} \cdb*{eq17.chk} \end{dmath*}
+\end{dgroup*}
+
+\end{document}
