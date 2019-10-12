@@ -96,12 +96,16 @@ veryclean:
 pristine:
 	@ make rm-dot
 	@ make veryclean
+	@ rm -rf shared.py
+	@ rm -rf __pycache__
+	@ if [[ -e eqtns.pdf ]]; then mv eqtns.pdf eqtns-save.pdf; fi
 	@ for file in $(TARGETS); \
 	  do \
 	     rm -rf $${file}.pdf; \
 		  rm -rf $${file}.json; \
 		  rm -rf $${file}.cdbtex; \
 	  done
+	@ if [[ -e eqtns-save.pdf ]]; then mv eqtns-save.pdf eqtns.pdf; fi
 #-------------------------------------------------------------------------------
 # prepare files for github
 github:

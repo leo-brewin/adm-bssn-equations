@@ -33,8 +33,6 @@ mkdir -p $MyBin $MyLib $MyTex
 
 # testing, each should return a brief help message
 
-# ada-merge -h
-# cdb2ada -h
 # cdblatex.sh -h
 # cdbpreproc.py -h
 # cdbpostproc.py -h
