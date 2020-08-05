@@ -77,6 +77,13 @@ rm-dot:
 	@ rm -rf .[a-z]*.lb
 	@ rm -rf .merged.tex .tmp.txt
 #-------------------------------------------------------------------------------
+pdf:
+	@ mkdir -p ../pdf
+	@ for file in $(TARGETS); \
+	  do \
+	     mv $${file}.pdf ../pdf/.; \
+	  done
+#-------------------------------------------------------------------------------
 clean:
 	@ for file in $(TARGETS); \
 	  do \
@@ -98,18 +105,17 @@ pristine:
 	@ make veryclean
 	@ rm -rf shared.py
 	@ rm -rf __pycache__
-	@ if [[ -e eqtns.pdf ]]; then mv eqtns.pdf eqtns-save.pdf; fi
 	@ for file in $(TARGETS); \
 	  do \
 	     rm -rf $${file}.pdf; \
 		  rm -rf $${file}.json; \
 		  rm -rf $${file}.cdbtex; \
 	  done
-	@ if [[ -e eqtns-save.pdf ]]; then mv eqtns-save.pdf eqtns.pdf; fi
 #-------------------------------------------------------------------------------
 # prepare files for github
 github:
 	@ make pristine
 	@ make all
-	@ make rm-dot
-	@ make veryclean
+	@ make pdf
+	@ make pristine
+	@ if [[ -e ../pdf/eqtns.pdf ]]; then cp ../pdf/eqtns.pdf eqtns.pdf; fi

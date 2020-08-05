@@ -34,7 +34,7 @@
 \section*{Deriving the BSSN equations from the ADM equations}
 
 The following Cadabra codes verifies, for the particular case of vacuum spacetimes,
-the main equations (with zero-sift) in the Phys Rev D papers Phys.Rev.D. (62) 044034 (2000) and
+the main equations (with zero-shift) in the Phys Rev D papers Phys.Rev.D. (62) 044034 (2000) and
 Phys.Rev.D. (67) 084023 (2003) by Miguel Alcubierre, Bernd Brugmann etal. .
 
 The two papers are abbreviated as pdr62 and prd67 respectively.
@@ -58,7 +58,7 @@ The good news is that for each equation the difference is zero (as it should be)
 
 The summary is then followed by the full details of the calculations for each
 equation. The output includes all of the steps. The odd looking equation numbers are
-tags that match the line in the Cadabra that generated the output. Thus the following
+tags that match the line in the corresponding Cadabra source. Thus the following
 output (from prd62 equation 11)
 %
 \begin{dgroup*}[spread=5pt]
@@ -95,8 +95,15 @@ LaTeX source. See the {\tt INSTALL.txt} file in {\tt hybrid-latex} for full deta
 The documentation for hybrid-latex tools is included in the {\tt hybrid-latex}
 directory.
 
+To compile all of the files in one go just use
+\lstset{numbers=none}
+\begin{lstlisting}
+   cd source
+   make
+\end{lstlisting}
+
 You can compile any one of the files (e.g., {\tt eqtn11.tex}) using any of the
-following
+following (from within the {\tt source} directory)
 
 \lstset{numbers=none}
 \begin{lstlisting}
