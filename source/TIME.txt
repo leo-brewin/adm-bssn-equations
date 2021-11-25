@@ -1,0 +1,19 @@
+-- 08 Nov 2021 --------------------------------------------
+
+Cadabra 2.3.7 (build 2778.b0ba2dbb80 dated 2021-09-27)
+
+prd62        -->  1.0 secs and 49 Mbytes
+prd67        -->  0.6 secs and 48 Mbytes
+adm          -->  0.6 secs and 48 Mbytes
+gamma        -->  0.8 secs and 50 Mbytes
+hamiltonian  -->  1.3 secs and 53 Mbytes
+momentum     -->  1.1 secs and 51 Mbytes
+eqtn10       -->  0.9 secs and 53 Mbytes
+eqtn09       -->  1.0 secs and 54 Mbytes
+eqtn11       -->  1.1 secs and 53 Mbytes
+eqtn12       -->  1.6 secs and 55 Mbytes
+eqtn15       -->  2.4 secs and 50 Mbytes
+eqtn17       -->  0.8 secs and 49 Mbytes
+eqtn18       -->  3.1 secs and 49 Mbytes
+eqtn19       -->  0.8 secs and 49 Mbytes
+eqtn20       -->  0.7 secs and 49 Mbytes

@@ -12,6 +12,8 @@ TARGETS = \
 		eqtns
 #-------------------------------------------------------------------------------
 all:
+	@ mkdir -p lib
+	@ make version
 	@ make shared.py
 	@ for file in $(TARGETS); do make .$${file}; done;
 	@ make veryclean
@@ -48,26 +50,30 @@ all:
 	@ make momentum
 #-------------------------------------------------------------------------------
 eqtns:
-	@ echo "> cadabra eqtns ..."
+	@ echo "cadabra eqtns ..."
 	@ make .eqtns
 .eqtns: eqtns.tex shared.py\
 		  .eqtn09 .eqtn10 .eqtn11 .eqtn12 .eqtn15\
 		  .eqtn17 .eqtn18 .eqtn19 .eqtn20\
 		  .gamma .hamiltonian .momentum
-	@ echo "> pdflatex eqtns ..."
+	@ echo "pdflatex eqtns ..."
 	@ pdflatex -halt-on-error -interaction=batchmode eqtns &> /dev/null
 	@ touch .eqtns
 #-------------------------------------------------------------------------------
-shared.py: shared.cdb
-	@ echo "> cadabra2python shared ..."
-	@ cadabra2python shared.cdb shared.py
+shared.py: hide/shared.cdb
+	@ echo "cadabra2python shared ..."
+	@ cadabra2python hide/shared.cdb shared.py
 #-------------------------------------------------------------------------------
 %:
-	@ echo "> cdblatex.sh $@ ..."
+	@ echo "cdblatex.sh $@ ..."
 	@ cdblatex.sh -T -s -i $@ &> $@.cdblog
 	@ # echo " -->"`cputime -i $@.cdblog`
+	@ cp -f $@.cdbtex lib/.
 	@ pdflatex -halt-on-error -interaction=batchmode $@ &> /dev/null
 	@ touch .$@
+#-------------------------------------------------------------------------------
+version:
+	@ version.sh
 #-------------------------------------------------------------------------------
 rm-dot:
 	@ for file in $(TARGETS); \
@@ -103,6 +109,19 @@ veryclean:
 pristine:
 	@ make rm-dot
 	@ make veryclean
+	@ rm -rf lib/*
+	@ rm -rf shared.py
+	@ rm -rf __pycache__
+	@ for file in $(TARGETS); \
+	  do \
+	     rm -rf $${file}.pdf; \
+		  rm -rf $${file}.json; \
+		  rm -rf $${file}.cdbtex; \
+	  done
+#-------------------------------------------------------------------------------
+github-clean:
+	@ make rm-dot
+	@ make veryclean
 	@ rm -rf shared.py
 	@ rm -rf __pycache__
 	@ for file in $(TARGETS); \
@@ -117,5 +136,4 @@ github:
 	@ make pristine
 	@ make all
 	@ make pdf
-	@ make pristine
-	@ if [[ -e ../pdf/eqtns.pdf ]]; then cp ../pdf/eqtns.pdf eqtns.pdf; fi
+	@ make github-clean

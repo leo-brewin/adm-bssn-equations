@@ -5,6 +5,8 @@
 % ---------------------------------------------------------------------------------------
 \documentclass[12pt]{cdblatex}
 \usepackage[final]{pdfpages}
+\usepackage{fancyhdr}
+\usepackage{footer}
 
 \hypersetup{colorlinks=true,
             citecolor=blue,
@@ -16,24 +18,26 @@
 
 \CdbSetup{action=verbatim}
 
-\input{eqtn09.cdbtex}
-\input{eqtn10.cdbtex}
-\input{eqtn11.cdbtex}
-\input{eqtn12.cdbtex}
-\input{eqtn15.cdbtex}
-\input{eqtn17.cdbtex}
-\input{eqtn18.cdbtex}
-\input{eqtn19.cdbtex}
-\input{eqtn20.cdbtex}
+\input{lib/eqtn09.cdbtex}
+\input{lib/eqtn10.cdbtex}
+\input{lib/eqtn11.cdbtex}
+\input{lib/eqtn12.cdbtex}
+\input{lib/eqtn15.cdbtex}
+\input{lib/eqtn17.cdbtex}
+\input{lib/eqtn18.cdbtex}
+\input{lib/eqtn19.cdbtex}
+\input{lib/eqtn20.cdbtex}
 
-\input{gamma.cdbtex}
-\input{hamiltonian.cdbtex}
-\input{momentum.cdbtex}
+\input{lib/gamma.cdbtex}
+\input{lib/hamiltonian.cdbtex}
+\input{lib/momentum.cdbtex}
+
+\input{version.tex}
 
 % =======================================================================================
 \section*{Deriving the BSSN equations from the ADM equations}
 
-The following Cadabra codes verifies, for the particular case of vacuum spacetimes,
+The following Cadabra\footnote{Based on \CdbVersion} codes verifies, for the particular case of vacuum spacetimes,
 the main equations (with zero-shift) in the Phys Rev D papers Phys.Rev.D. (62) 044034 (2000) and
 Phys.Rev.D. (67) 084023 (2003) by Miguel Alcubierre, Bernd Brugmann etal. .
 
