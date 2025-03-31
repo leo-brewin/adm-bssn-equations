@@ -22,10 +22,10 @@
 \partial_{t}{K_{i j}}%
 }
 \cdbtag{adm.DKijDt.rhs}{%
--D_{i j}{N}+N \left(R_{i j}+{{\rm tr} K} K_{i j}-2K_{i c} K_{j d} g^{c d}\right)%
+-D_{i j}{N}\discretionary{}{}{}+N \left(R_{i j}\discretionary{}{}{}+{{\rm tr} K} K_{i j}\discretionary{}{}{}-2K_{i c} K_{j d} g^{c d}\right)%
 }
 \cdbtag{adm.DKijDt}{%
-\partial_{t}{K_{i j}} \rightarrow -D_{i j}{N}+N \left(R_{i j}+{{\rm tr} K} K_{i j}-2K_{i c} K_{j d} g^{c d}\right)%
+\partial_{t}{K_{i j}} \rightarrow -D_{i j}{N}\discretionary{}{}{}+N \left(R_{i j}\discretionary{}{}{}+{{\rm tr} K} K_{i j}\discretionary{}{}{}-2K_{i c} K_{j d} g^{c d}\right)%
 }
 \cdbtag{adm.DdetgDt.lhs}{%
 \partial_{t}{{g}}%

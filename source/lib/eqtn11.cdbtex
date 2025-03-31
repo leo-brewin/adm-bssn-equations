@@ -7,61 +7,61 @@
 \partial_{t}\left(g^{i j} K_{i j}\right)%
 }
 \cdbtag{eq11.103}{%
-\partial_{t}{g^{i j}} K_{i j}+g^{i j} \partial_{t}{K_{i j}}%
+\partial_{t}{g^{i j}} K_{i j}\discretionary{}{}{}+g^{i j} \partial_{t}{K_{i j}}%
 }
 \cdbtag{eq11.104}{%
-2N K^{i j} K_{i j}+g^{i j} \partial_{t}{K_{i j}}%
+2N K^{i j} K_{i j}\discretionary{}{}{}+g^{i j} \partial_{t}{K_{i j}}%
 }
 \cdbtag{eq11.105}{%
-2N K^{i j} K_{i j}+g^{i j} \left(-D_{i j}{N}+N \left(R_{i j}+{{\rm tr} K} K_{i j}-2K_{i c} K_{j d} g^{c d}\right)\right)%
+2N K^{i j} K_{i j}\discretionary{}{}{}+g^{i j} \left(-D_{i j}{N}\discretionary{}{}{}+N \left(R_{i j}\discretionary{}{}{}+{{\rm tr} K} K_{i j}\discretionary{}{}{}-2K_{i c} K_{j d} g^{c d}\right)\right)%
 }
 \cdbtag{eq11.106}{%
-2N K^{i j} K_{i j}-g^{i j} D_{i j}{N}+g^{i j} N R_{i j}+g^{i j} N {{\rm tr} K} K_{i j}-2g^{i j} N K_{i c} K_{j d} g^{c d}%
+2N K^{i j} K_{i j}\discretionary{}{}{}-g^{i j} D_{i j}{N}\discretionary{}{}{}+g^{i j} N R_{i j}\discretionary{}{}{}+g^{i j} N {{\rm tr} K} K_{i j}\discretionary{}{}{}-2g^{i j} N K_{i c} K_{j d} g^{c d}%
 }
 \cdbtag{eq11.107}{%
-2N K^{i j} K_{i j}-g^{i j} D_{i j}{N}+g^{i j} N R_{i j}+{{\rm tr} K} N {{\rm tr} K}-2g^{i j} N K_{i c} K_{j d} g^{c d}%
+2N K^{i j} K_{i j}\discretionary{}{}{}-g^{i j} D_{i j}{N}\discretionary{}{}{}+g^{i j} N R_{i j}\discretionary{}{}{}+{{\rm tr} K} N {{\rm tr} K}\discretionary{}{}{}-2g^{i j} N K_{i c} K_{j d} g^{c d}%
 }
 \cdbtag{eq11.108}{%
-2N K^{i j} K_{i j}-g^{i j} D_{i j}{N}+g^{i j} N R_{i j}+{{\rm tr} K} N {{\rm tr} K}-2K^{j d} N K_{j d}%
+2N K^{i j} K_{i j}\discretionary{}{}{}-g^{i j} D_{i j}{N}\discretionary{}{}{}+g^{i j} N R_{i j}\discretionary{}{}{}+{{\rm tr} K} N {{\rm tr} K}\discretionary{}{}{}-2K^{j d} N K_{j d}%
 }
 \cdbtag{eq11.109}{%
--g^{a b} D_{a b}{N}+N g^{a b} R_{a b}+N {{\rm tr} K} {{\rm tr} K}%
+-g^{a b} D_{a b}{N}\discretionary{}{}{}+N g^{a b} R_{a b}\discretionary{}{}{}+N {{\rm tr} K} {{\rm tr} K}%
 }
 \cdbtag{eq11.110}{%
--g^{a b} D_{a b}{N}+N \left(K_{a b} K^{a b}-{{\rm tr} K} {{\rm tr} K}\right)+N {{\rm tr} K} {{\rm tr} K}%
+-g^{a b} D_{a b}{N}\discretionary{}{}{}+N \left(K_{a b} K^{a b}\discretionary{}{}{}-{{\rm tr} K} {{\rm tr} K}\right)\discretionary{}{}{}+N {{\rm tr} K} {{\rm tr} K}%
 }
 \cdbtag{eq11.111}{%
--g^{a b} D_{a b}{N}+N K_{a b} K^{a b}%
+-g^{a b} D_{a b}{N}\discretionary{}{}{}+N K_{a b} K^{a b}%
 }
 \cdbtag{eq11.112}{%
--g^{a b} D_{a b}{N}+N \left(A_{a b}+\frac{1}{3}g_{a b} {{\rm tr} K}\right) K^{a b}%
+-g^{a b} D_{a b}{N}\discretionary{}{}{}+N \left(A_{a b}\discretionary{}{}{}+\frac{1}{3}g_{a b} {{\rm tr} K}\right) K^{a b}%
 }
 \cdbtag{eq11.113}{%
--g^{a b} D_{a b}{N}+N \left(A_{a b}+\frac{1}{3}g_{a b} {{\rm tr} K}\right) \left(A^{a b}+\frac{1}{3}g^{a b} {{\rm tr} K}\right)%
+-g^{a b} D_{a b}{N}\discretionary{}{}{}+N \left(A_{a b}\discretionary{}{}{}+\frac{1}{3}g_{a b} {{\rm tr} K}\right) \left(A^{a b}\discretionary{}{}{}+\frac{1}{3}g^{a b} {{\rm tr} K}\right)%
 }
 \cdbtag{eq11.114}{%
--g^{a b} D_{a b}{N}+N A_{a b} A^{a b}+\frac{1}{3}N A_{a b} g^{a b} {{\rm tr} K}+\frac{1}{3}N g_{a b} {{\rm tr} K} A^{a b}+\frac{1}{9}N g_{a b} {{\rm tr} K} g^{a b} {{\rm tr} K}%
+-g^{a b} D_{a b}{N}\discretionary{}{}{}+N A_{a b} A^{a b}\discretionary{}{}{}+\frac{1}{3}N A_{a b} g^{a b} {{\rm tr} K}\discretionary{}{}{}+\frac{1}{3}N g_{a b} {{\rm tr} K} A^{a b}\discretionary{}{}{}+\frac{1}{9}N g_{a b} {{\rm tr} K} g^{a b} {{\rm tr} K}%
 }
 \cdbtag{eq11.115}{%
--g^{a b} D_{a b}{N}+N A_{a b} A^{a b}+\frac{1}{3}N g_{a b} {{\rm tr} K} A^{a b}+\frac{1}{9}N g_{a b} {{\rm tr} K} g^{a b} {{\rm tr} K}%
+-g^{a b} D_{a b}{N}\discretionary{}{}{}+N A_{a b} A^{a b}\discretionary{}{}{}+\frac{1}{3}N g_{a b} {{\rm tr} K} A^{a b}\discretionary{}{}{}+\frac{1}{9}N g_{a b} {{\rm tr} K} g^{a b} {{\rm tr} K}%
 }
 \cdbtag{eq11.116}{%
--g^{a b} D_{a b}{N}+N A_{a b} A^{a b}+\frac{1}{9}N g_{a b} {{\rm tr} K} g^{a b} {{\rm tr} K}%
+-g^{a b} D_{a b}{N}\discretionary{}{}{}+N A_{a b} A^{a b}\discretionary{}{}{}+\frac{1}{9}N g_{a b} {{\rm tr} K} g^{a b} {{\rm tr} K}%
 }
 \cdbtag{eq11.117}{%
--g^{a b} D_{a b}{N}+N {\bar{A}}_{a b} {\bar{A}}^{a b}+\frac{1}{9}N g_{a b} {{\rm tr} K} g^{a b} {{\rm tr} K}%
+-g^{a b} D_{a b}{N}\discretionary{}{}{}+N {\bar{A}}_{a b} {\bar{A}}^{a b}\discretionary{}{}{}+\frac{1}{9}N g_{a b} {{\rm tr} K} g^{a b} {{\rm tr} K}%
 }
 \cdbtag{eq11.118}{%
--g^{a b} D_{a b}{N}+N {\bar{A}}_{a b} {\bar{A}}^{a b}+\frac{1}{3}N {{\rm tr} K} {{\rm tr} K}%
+-g^{a b} D_{a b}{N}\discretionary{}{}{}+N {\bar{A}}_{a b} {\bar{A}}^{a b}\discretionary{}{}{}+\frac{1}{3}N {{\rm tr} K} {{\rm tr} K}%
 }
 \cdbtag{eq11.119}{%
--g^{a b} D_{a b}{N}+N {\bar{A}}_{a b} {\bar{A}}^{a b}+\frac{1}{3}{{{\rm tr} K}}^{2} N%
+-g^{a b} D_{a b}{N}\discretionary{}{}{}+N {\bar{A}}_{a b} {\bar{A}}^{a b}\discretionary{}{}{}+\frac{1}{3}{{{\rm tr} K}}^{2} N%
 }
 \cdbtag{eq11.lcb}{%
--g^{a b} D_{a b}{N}+N {\bar{A}}_{a b} {\bar{A}}^{a b}+\frac{1}{3}{{{\rm tr} K}}^{2} N%
+-g^{a b} D_{a b}{N}\discretionary{}{}{}+N {\bar{A}}_{a b} {\bar{A}}^{a b}\discretionary{}{}{}+\frac{1}{3}{{{\rm tr} K}}^{2} N%
 }
 \cdbtag{eq11.prd}{%
--g^{i j} D_{i j}{N}+N \left({\bar{A}}_{i j} {\bar{A}}^{i j}+\frac{1}{3}{{{\rm tr} K}}^{2}\right)%
+-g^{i j} D_{i j}{N}\discretionary{}{}{}+N \left({\bar{A}}_{i j} {\bar{A}}^{i j}\discretionary{}{}{}+\frac{1}{3}{{{\rm tr} K}}^{2}\right)%
 }
 \cdbtag{eq11.chk}{%
 0%

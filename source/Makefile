@@ -13,6 +13,7 @@ TARGETS = \
 #-------------------------------------------------------------------------------
 all:
 	@ mkdir -p lib
+	@ mkdir -p ../pdf
 	@ make version
 	@ make shared.py
 	@ for file in $(TARGETS); do make .$${file}; done;
@@ -66,10 +67,11 @@ shared.py: hide/shared.cdb
 #-------------------------------------------------------------------------------
 %:
 	@ echo "cdblatex.sh $@ ..."
-	@ cdblatex.sh -T -s -i $@ &> $@.cdblog
+	@ ${CDBLATEX} -T -s -i $@ &> $@.cdblog
 	@ # echo " -->"`cputime -i $@.cdblog`
 	@ cp -f $@.cdbtex lib/.
 	@ pdflatex -halt-on-error -interaction=batchmode $@ &> /dev/null
+	@ cp -f $@.pdf ../pdf/.
 	@ touch .$@
 #-------------------------------------------------------------------------------
 version:
@@ -137,3 +139,5 @@ github:
 	@ make all
 	@ make pdf
 	@ make github-clean
+	@ rm -rf expected
+	@ mv ../pdf/* ../expected/.

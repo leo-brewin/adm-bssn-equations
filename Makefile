@@ -3,17 +3,12 @@ SHELL = /bin/bash
 .PHONY:	equations install
 #-------------------------------------------------------------------------------
 all:
-	@ make install
 	@ make equations
 	@ make veryclean
 #-------------------------------------------------------------------------------
 equations:
 	@ echo "> make equations ..."
 	@ (cd source;     make)
-#-------------------------------------------------------------------------------
-install:
-	@ echo "> make intsall ..."
-	@ (cd hybrid-latex; INSTALL.sh)
 #-------------------------------------------------------------------------------
 rm-dot:
 	@ (cd source; make rm-dot)

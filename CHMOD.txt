@@ -1,12 +1,6 @@
 # it's unlikely that this file is neeeded, but just in case
 # source this file to ensure the associated files are executable
 
-chmod u+x ./build.sh
-
-chmod u+x ./source/build.sh
-
-chmod u+x ./hybrid-latex/diff.sh
-chmod u+x ./hybrid-latex/sync.sh
 chmod u+x ./hybrid-latex/scripts/cdbclean.sh
 chmod u+x ./hybrid-latex/scripts/cdbcopy.py
 chmod u+x ./hybrid-latex/scripts/cdblatex.sh
