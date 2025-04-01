@@ -1,3 +1,9 @@
+-- 01 apr 2025
+
+   The install process was changed to keep all tools within the main directory.
+   The one exception is Cadabra (which is installed at a location of the users
+   choosing).
+
 -- 21 nov 2021
 
 1. Non-trivial refactoring of the build/install scripts.
