@@ -19,7 +19,7 @@ $ source SETUP.txt
 $ make
 ```
 
-If all goes well (as it should 😊 then a collection of the results, one pdf for each BSSN equation and the complete collecton `eqtns.pdf`, can be found in the `source` directory (which can be compared against the similar pdf's in the `expected` directory).
+If all goes well (as it should 😊) then a collection of the results, one pdf for each BSSN equation and the complete collection `eqtns.pdf`, can be found in the `source` directory (which can be compared against the similar pdf's in the `expected` directory).
 
 ## Cut to the chase
 
