@@ -15,55 +15,52 @@ all:
 	@ mkdir -p lib
 	@ mkdir -p ../pdf
 	@ make version
-	@ make shared.py
+	@ touch shared.cdb # forces old versions of Cadabra < 2.5.12 to update its cache
 	@ for file in $(TARGETS); do make .$${file}; done;
 	@ make veryclean
 #-------------------------------------------------------------------------------
-.adm: adm.tex shared.py
+.adm: adm.tex shared.cdb
 	@ make adm
-.prd62: prd62.tex shared.py
+.prd62: prd62.tex shared.cdb
 	@ make prd62
-.prd67: prd67.tex shared.py
+.prd67: prd67.tex shared.cdb
 	@ make prd67
-.eqtn09: eqtn09.tex shared.py adm.tex eqtn10.tex prd62.tex
+.eqtn09: eqtn09.tex shared.cdb adm.tex eqtn10.tex prd62.tex
 	@ make eqtn09
-.eqtn10: eqtn10.tex shared.py adm.tex prd62.tex
+.eqtn10: eqtn10.tex shared.cdb adm.tex prd62.tex
 	@ make eqtn10
-.eqtn11: eqtn11.tex shared.py adm.tex prd62.tex
+.eqtn11: eqtn11.tex shared.cdb adm.tex prd62.tex
 	@ make eqtn11
-.eqtn12: eqtn12.tex shared.py adm.tex eqtn10.tex eqtn11.tex prd62.tex
+.eqtn12: eqtn12.tex shared.cdb adm.tex eqtn10.tex eqtn11.tex prd62.tex
 	@ make eqtn12
-.eqtn15: eqtn15.tex shared.py gamma.tex prd62.tex
+.eqtn15: eqtn15.tex shared.cdb gamma.tex prd62.tex
 	@ make eqtn15
-.eqtn17: eqtn17.tex shared.py prd62.tex
+.eqtn17: eqtn17.tex shared.cdb prd62.tex
 	@ make eqtn17
-.eqtn18: eqtn18.tex shared.py prd62.tex
+.eqtn18: eqtn18.tex shared.cdb prd62.tex
 	@ make eqtn18
-.eqtn19: eqtn19.tex shared.py eqtn17.tex prd62.tex
+.eqtn19: eqtn19.tex shared.cdb eqtn17.tex prd62.tex
 	@ make eqtn19
-.eqtn20: eqtn20.tex shared.py eqtn19.tex momentum.tex prd62.tex
+.eqtn20: eqtn20.tex shared.cdb eqtn19.tex momentum.tex prd62.tex
 	@ make eqtn20
-.gamma: gamma.tex shared.py prd67.tex
+.gamma: gamma.tex shared.cdb prd67.tex
 	@ make gamma
-.hamiltonian: hamiltonian.tex shared.py prd67.tex
+.hamiltonian: hamiltonian.tex shared.cdb prd67.tex
 	@ make hamiltonian
-.momentum: momentum.tex shared.py gamma.tex prd67.tex
+.momentum: momentum.tex shared.cdb gamma.tex prd67.tex
 	@ make momentum
 #-------------------------------------------------------------------------------
 eqtns:
 	@ echo "cadabra eqtns ..."
 	@ make .eqtns
-.eqtns: eqtns.tex shared.py\
+.eqtns: eqtns.tex shared.cdb\
 		  .eqtn09 .eqtn10 .eqtn11 .eqtn12 .eqtn15\
 		  .eqtn17 .eqtn18 .eqtn19 .eqtn20\
 		  .gamma .hamiltonian .momentum
 	@ echo "pdflatex eqtns ..."
 	@ pdflatex -halt-on-error -interaction=batchmode eqtns &> /dev/null
+	@ cp -f eqtns.pdf ../pdf/.
 	@ touch .eqtns
-#-------------------------------------------------------------------------------
-shared.py: hide/shared.cdb
-	@ echo "cadabra2python shared ..."
-	@ cadabra2python hide/shared.cdb shared.py
 #-------------------------------------------------------------------------------
 %:
 	@ echo "cdblatex.sh $@ ..."
@@ -112,7 +109,6 @@ pristine:
 	@ make rm-dot
 	@ make veryclean
 	@ rm -rf lib/*
-	@ rm -rf shared.py
 	@ rm -rf __pycache__
 	@ for file in $(TARGETS); \
 	  do \
@@ -124,7 +120,6 @@ pristine:
 github-clean:
 	@ make rm-dot
 	@ make veryclean
-	@ rm -rf shared.py
 	@ rm -rf __pycache__
 	@ for file in $(TARGETS); \
 	  do \
