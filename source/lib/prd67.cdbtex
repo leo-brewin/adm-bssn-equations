@@ -1,21 +1,21 @@
 \chardef\thehashcode=\catcode`\#	 % save catcode of hash (probably 6)
 \catcode`\#=11			             % set catcode for hash to be a letter (11)
 \cdbtag{prd67.eq19.lhs}{%
-0%
+0\,%
 }
 \cdbtag{prd67.eq19.rhs}{%
-R\discretionary{}{}{}-{\bar{A}}_{a b} {\bar{A}}^{a b}\discretionary{}{}{}+\frac{2}{3}{{{\rm tr} K}}^{2}%
+R\discretionary{}{}{}-\,{\bar{A}}_{a b} {\bar{A}}^{a b}\discretionary{}{}{}+\frac{2}{3}\,{{{\rm tr} K}}^{2\,}%
 }
 \cdbtag{prd67.eq20.lhs}{%
-0%
+0\,%
 }
 \cdbtag{prd67.eq20.rhs}{%
-\partial_{a}{{\bar{A}}^{i a}}\discretionary{}{}{}+6{\bar{A}}^{i a} \partial_{a}{\phi}\discretionary{}{}{}+{\bar{A}}^{a b} {\bar{\Gamma}}^{i}{}_{a b}\discretionary{}{}{} - \frac{2}{3}{\bar{g}}^{i a} \partial_{a}{{{\rm tr} K}}%
+\partial_{a}\!{{\bar{A}}^{i a}}\discretionary{}{}{}+6\,{\bar{A}}^{i a} \partial_{a}\!{\phi}\discretionary{}{}{}+{\bar{A}}^{a b} {\bar{\Gamma}}^{i}\!{}_{a b}\discretionary{}{}{} - \frac{2}{3}\,{\bar{g}}^{i a} \partial_{a}\!{{{\rm tr} K}}%
 }
 \cdbtag{prd67.eq27.lhs}{%
-\Gamma^{a}{}_{b c}%
+\Gamma^{a}\!{}_{b c}%
 }
 \cdbtag{prd67.eq27.rhs}{%
-{\bar{\Gamma}}^{a}{}_{b c}\discretionary{}{}{}+2{\bar{g}}^{a}{}_{c} \partial_{b}{\phi}\discretionary{}{}{}+2{\bar{g}}^{a}{}_{b} \partial_{c}{\phi}\discretionary{}{}{}-2{\bar{g}}_{b c} {\bar{g}}^{a e} \partial_{e}{\phi}%
+{\bar{\Gamma}}^{a}\!{}_{b c}\discretionary{}{}{}+2\,{\bar{g}}^{a}\!{}_{c} \partial_{b}\!{\phi}\discretionary{}{}{}+2\,{\bar{g}}^{a}\!{}_{b} \partial_{c}\!{\phi}\discretionary{}{}{}-2\,{\bar{g}}_{b c} {\bar{g}}^{a e} \partial_{e}\!{\phi}%
 }
 \catcode`\#=\thehashcode          % restore original catcode for hash

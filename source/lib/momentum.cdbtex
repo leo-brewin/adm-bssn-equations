@@ -1,114 +1,114 @@
 \chardef\thehashcode=\catcode`\#	 % save catcode of hash (probably 6)
 \catcode`\#=11			             % set catcode for hash to be a letter (11)
 \cdbtag{Mom.101}{%
-D_{j}\left(K^{i j}\discretionary{}{}{}-g^{i j} {{\rm tr} K}\right)%
+D_{j}\!\left(K^{i j}\discretionary{}{}{}-\,g^{i j} {{\rm tr} K}\right)%
 }
 \cdbtag{Mom.102}{%
-D_{j}{K^{i j}}\discretionary{}{}{}-D_{j}\left(g^{i j} {{\rm tr} K}\right)%
+D_{j}\!{K^{i j}}\discretionary{}{}{}-\,D_{j}\!\left(g^{i j} {{\rm tr} K}\right)%
 }
 \cdbtag{Mom.103}{%
-D_{j}{K^{i j}}\discretionary{}{}{}-D_{j}{g^{i j}} {{\rm tr} K}\discretionary{}{}{}-g^{i j} D_{j}{{{\rm tr} K}}%
+D_{j}\!{K^{i j}}\discretionary{}{}{}-\,D_{j}\!{g^{i j}} {{\rm tr} K}\discretionary{}{}{}-\,g^{i j} D_{j}\!{{{\rm tr} K}}%
 }
 \cdbtag{Mom.104}{%
-D_{j}{K^{i j}}\discretionary{}{}{}-g^{i j} D_{j}{{{\rm tr} K}}%
+D_{j}\!{K^{i j}}\discretionary{}{}{}-\,g^{i j} D_{j}\!{{{\rm tr} K}}%
 }
 \cdbtag{Mom.105}{%
-D_{j}\left(\exp\left(-4\phi\right) {\bar{A}}^{i j}\discretionary{}{}{}+\frac{1}{3}g^{i j} {{\rm tr} K}\right)\discretionary{}{}{}-g^{i j} D_{j}{{{\rm tr} K}}%
+D_{j}\!\left(\exp\left(-4\,\phi\right) {\bar{A}}^{i j}\discretionary{}{}{}+\frac{1}{3}\,g^{i j} {{\rm tr} K}\right)\discretionary{}{}{}-\,g^{i j} D_{j}\!{{{\rm tr} K}}%
 }
 \cdbtag{Mom.106}{%
-D_{j}\left(\exp\left(-4\phi\right) {\bar{A}}^{i j}\right)\discretionary{}{}{}+\frac{1}{3}D_{j}\left(g^{i j} {{\rm tr} K}\right)\discretionary{}{}{}-g^{i j} D_{j}{{{\rm tr} K}}%
+D_{j}\!\left(\exp\left(-4\,\phi\right) {\bar{A}}^{i j}\right)\discretionary{}{}{}+\frac{1}{3}\,D_{j}\!\left(g^{i j} {{\rm tr} K}\right)\discretionary{}{}{}-\,g^{i j} D_{j}\!{{{\rm tr} K}}%
 }
 \cdbtag{Mom.107}{%
-D_{j}\left(\exp\left(-4\phi\right)\right) {\bar{A}}^{i j}\discretionary{}{}{}+\exp\left(-4\phi\right) D_{j}{{\bar{A}}^{i j}}\discretionary{}{}{}+\frac{1}{3}D_{j}{g^{i j}} {{\rm tr} K}\discretionary{}{}{} - \frac{2}{3}g^{i j} D_{j}{{{\rm tr} K}}%
+D_{j}\!\left(\exp\left(-4\,\phi\right)\right) {\bar{A}}^{i j}\discretionary{}{}{}+\exp\left(-4\,\phi\right) D_{j}\!{{\bar{A}}^{i j}}\discretionary{}{}{}+\frac{1}{3}\,D_{j}\!{g^{i j}} {{\rm tr} K}\discretionary{}{}{} - \frac{2}{3}\,g^{i j} D_{j}\!{{{\rm tr} K}}%
 }
 \cdbtag{Mom.108}{%
-D_{j}\left(\exp\left(-4\phi\right)\right) {\bar{A}}^{i j}\discretionary{}{}{}+\exp\left(-4\phi\right) D_{j}{{\bar{A}}^{i j}}\discretionary{}{}{}+\frac{1}{3}D_{j}{g^{i j}} {{\rm tr} K}\discretionary{}{}{} - \frac{2}{3}g^{i j} \partial_{j}{{{\rm tr} K}}%
+D_{j}\!\left(\exp\left(-4\,\phi\right)\right) {\bar{A}}^{i j}\discretionary{}{}{}+\exp\left(-4\,\phi\right) D_{j}\!{{\bar{A}}^{i j}}\discretionary{}{}{}+\frac{1}{3}\,D_{j}\!{g^{i j}} {{\rm tr} K}\discretionary{}{}{} - \frac{2}{3}\,g^{i j} \partial_{j}\!{{{\rm tr} K}}%
 }
 \cdbtag{Mom.109}{%
-D_{j}\left(\exp\left(-4\phi\right)\right) {\bar{A}}^{i j}\discretionary{}{}{}+\exp\left(-4\phi\right) D_{j}{{\bar{A}}^{i j}}\discretionary{}{}{} - \frac{2}{3}g^{i j} \partial_{j}{{{\rm tr} K}}%
+D_{j}\!\left(\exp\left(-4\,\phi\right)\right) {\bar{A}}^{i j}\discretionary{}{}{}+\exp\left(-4\,\phi\right) D_{j}\!{{\bar{A}}^{i j}}\discretionary{}{}{} - \frac{2}{3}\,g^{i j} \partial_{j}\!{{{\rm tr} K}}%
 }
 \cdbtag{Mom.110}{%
--4\exp\left(-4\phi\right) \partial_{j}{\phi} {\bar{A}}^{i j}\discretionary{}{}{}+\exp\left(-4\phi\right) D_{j}{{\bar{A}}^{i j}}\discretionary{}{}{} - \frac{2}{3}g^{i j} \partial_{j}{{{\rm tr} K}}%
+-4\,\exp\left(-4\,\phi\right) \partial_{j}\!{\phi} {\bar{A}}^{i j}\discretionary{}{}{}+\exp\left(-4\,\phi\right) D_{j}\!{{\bar{A}}^{i j}}\discretionary{}{}{} - \frac{2}{3}\,g^{i j} \partial_{j}\!{{{\rm tr} K}}%
 }
 \cdbtag{confMom.101}{%
--4\exp\left(4\phi\right) \exp\left(-4\phi\right) \partial_{j}{\phi} {\bar{A}}^{i j}\discretionary{}{}{}+\exp\left(4\phi\right) \exp\left(-4\phi\right) D_{j}{{\bar{A}}^{i j}}\discretionary{}{}{} - \frac{2}{3}\exp\left(4\phi\right) g^{i j} \partial_{j}{{{\rm tr} K}}%
+-4\,\exp\left(4\,\phi\right) \exp\left(-4\,\phi\right) \partial_{j}\!{\phi} {\bar{A}}^{i j}\discretionary{}{}{}+\exp\left(4\,\phi\right) \exp\left(-4\,\phi\right) D_{j}\!{{\bar{A}}^{i j}}\discretionary{}{}{} - \frac{2}{3}\,\exp\left(4\,\phi\right) g^{i j} \partial_{j}\!{{{\rm tr} K}}%
 }
 \cdbtag{confMom.102}{%
--4\exp\left(4\phi\right) \exp\left(-4\phi\right) \partial_{j}{\phi} {\bar{A}}^{i j}\discretionary{}{}{}+\exp\left(4\phi\right) \exp\left(-4\phi\right) D_{j}{{\bar{A}}^{i j}}\discretionary{}{}{} - \frac{2}{3}\exp\left(4\phi\right) \exp\left(-4\phi\right) {\bar{g}}^{i j} \partial_{j}{{{\rm tr} K}}%
+-4\,\exp\left(4\,\phi\right) \exp\left(-4\,\phi\right) \partial_{j}\!{\phi} {\bar{A}}^{i j}\discretionary{}{}{}+\exp\left(4\,\phi\right) \exp\left(-4\,\phi\right) D_{j}\!{{\bar{A}}^{i j}}\discretionary{}{}{} - \frac{2}{3}\,\exp\left(4\,\phi\right) \exp\left(-4\,\phi\right) {\bar{g}}^{i j} \partial_{j}\!{{{\rm tr} K}}%
 }
 \cdbtag{confMom.103}{%
--4\partial_{j}{\phi} {\bar{A}}^{i j}\discretionary{}{}{}+D_{j}{{\bar{A}}^{i j}}\discretionary{}{}{} - \frac{2}{3}{\bar{g}}^{i j} \partial_{j}{{{\rm tr} K}}%
+-4\,\partial_{j}\!{\phi} {\bar{A}}^{i j}\discretionary{}{}{}+D_{j}\!{{\bar{A}}^{i j}}\discretionary{}{}{} - \frac{2}{3}\,{\bar{g}}^{i j} \partial_{j}\!{{{\rm tr} K}}%
 }
 \cdbtag{confMom.104}{%
--4\partial_{j}{\phi} {\bar{A}}^{i j}\discretionary{}{}{}+\partial_{j}{{\bar{A}}^{i j}}\discretionary{}{}{}+\Gamma^{i}{}_{a j} {\bar{A}}^{a j}\discretionary{}{}{}+\Gamma^{j}{}_{a j} {\bar{A}}^{i a}\discretionary{}{}{} - \frac{2}{3}{\bar{g}}^{i j} \partial_{j}{{{\rm tr} K}}%
+-4\,\partial_{j}\!{\phi} {\bar{A}}^{i j}\discretionary{}{}{}+\partial_{j}\!{{\bar{A}}^{i j}}\discretionary{}{}{}+\Gamma^{i}\!{}_{a j} {\bar{A}}^{a j}\discretionary{}{}{}+\Gamma^{j}\!{}_{a j} {\bar{A}}^{i a}\discretionary{}{}{} - \frac{2}{3}\,{\bar{g}}^{i j} \partial_{j}\!{{{\rm tr} K}}%
 }
 \cdbtag{confMom.105}{%
--4\partial_{j}{\phi} {\bar{A}}^{i j}\discretionary{}{}{}+\partial_{j}{{\bar{A}}^{i j}}\discretionary{}{}{}+\left(2{\bar{g}}^{i}{}_{j} \partial_{a}{\phi}\discretionary{}{}{}+2{\bar{g}}^{i}{}_{a} \partial_{j}{\phi}\discretionary{}{}{}-2{\bar{g}}^{i e} \partial_{e}{\phi} {\bar{g}}_{a j}\discretionary{}{}{}+{\bar{\Gamma}}^{i}{}_{a j}\right) {\bar{A}}^{a j}\discretionary{}{}{}+\left(2{\bar{g}}^{j}{}_{j} \partial_{a}{\phi}\discretionary{}{}{}+2{\bar{g}}^{j}{}_{a} \partial_{j}{\phi}\discretionary{}{}{}-2{\bar{g}}^{j e} \partial_{e}{\phi} {\bar{g}}_{a j}\discretionary{}{}{}+{\bar{\Gamma}}^{j}{}_{a j}\right) {\bar{A}}^{i a}\discretionary{}{}{} - \frac{2}{3}{\bar{g}}^{i j} \partial_{j}{{{\rm tr} K}}%
+-4\,\partial_{j}\!{\phi} {\bar{A}}^{i j}\discretionary{}{}{}+\partial_{j}\!{{\bar{A}}^{i j}}\discretionary{}{}{}+\left(2\,{\bar{g}}^{i}\!{}_{j} \partial_{a}\!{\phi}\discretionary{}{}{}+2\,{\bar{g}}^{i}\!{}_{a} \partial_{j}\!{\phi}\discretionary{}{}{}-2\,{\bar{g}}^{i e} \partial_{e}\!{\phi} {\bar{g}}_{a j}\discretionary{}{}{}+{\bar{\Gamma}}^{i}\!{}_{a j}\right) {\bar{A}}^{a j}\discretionary{}{}{}+\left(2\,{\bar{g}}^{j}\!{}_{j} \partial_{a}\!{\phi}\discretionary{}{}{}+2\,{\bar{g}}^{j}\!{}_{a} \partial_{j}\!{\phi}\discretionary{}{}{}-2\,{\bar{g}}^{j e} \partial_{e}\!{\phi} {\bar{g}}_{a j}\discretionary{}{}{}+{\bar{\Gamma}}^{j}\!{}_{a j}\right) {\bar{A}}^{i a}\discretionary{}{}{} - \frac{2}{3}\,{\bar{g}}^{i j} \partial_{j}\!{{{\rm tr} K}}%
 }
 \cdbtag{confMom.106}{%
--4\partial_{j}{\phi} {\bar{A}}^{i j}\discretionary{}{}{}+\partial_{j}{{\bar{A}}^{i j}}\discretionary{}{}{}+2{\bar{g}}^{i}{}_{j} \partial_{a}{\phi} {\bar{A}}^{a j}\discretionary{}{}{}+2{\bar{g}}^{i}{}_{a} \partial_{j}{\phi} {\bar{A}}^{a j}\discretionary{}{}{}-2{\bar{g}}^{i e} \partial_{e}{\phi} {\bar{g}}_{a j} {\bar{A}}^{a j}\discretionary{}{}{}+{\bar{\Gamma}}^{i}{}_{a j} {\bar{A}}^{a j}\discretionary{}{}{}+2{\bar{g}}^{j}{}_{j} \partial_{a}{\phi} {\bar{A}}^{i a}\discretionary{}{}{}+2{\bar{g}}^{j}{}_{a} \partial_{j}{\phi} {\bar{A}}^{i a}\discretionary{}{}{}-2{\bar{g}}^{j e} \partial_{e}{\phi} {\bar{g}}_{a j} {\bar{A}}^{i a}\discretionary{}{}{}+{\bar{\Gamma}}^{j}{}_{a j} {\bar{A}}^{i a}\discretionary{}{}{} - \frac{2}{3}{\bar{g}}^{i j} \partial_{j}{{{\rm tr} K}}%
+-4\,\partial_{j}\!{\phi} {\bar{A}}^{i j}\discretionary{}{}{}+\partial_{j}\!{{\bar{A}}^{i j}}\discretionary{}{}{}+2\,{\bar{g}}^{i}\!{}_{j} \partial_{a}\!{\phi} {\bar{A}}^{a j}\discretionary{}{}{}+2\,{\bar{g}}^{i}\!{}_{a} \partial_{j}\!{\phi} {\bar{A}}^{a j}\discretionary{}{}{}-2\,{\bar{g}}^{i e} \partial_{e}\!{\phi} {\bar{g}}_{a j} {\bar{A}}^{a j}\discretionary{}{}{}+{\bar{\Gamma}}^{i}\!{}_{a j} {\bar{A}}^{a j}\discretionary{}{}{}+2\,{\bar{g}}^{j}\!{}_{j} \partial_{a}\!{\phi} {\bar{A}}^{i a}\discretionary{}{}{}+2\,{\bar{g}}^{j}\!{}_{a} \partial_{j}\!{\phi} {\bar{A}}^{i a}\discretionary{}{}{}-2\,{\bar{g}}^{j e} \partial_{e}\!{\phi} {\bar{g}}_{a j} {\bar{A}}^{i a}\discretionary{}{}{}+{\bar{\Gamma}}^{j}\!{}_{a j} {\bar{A}}^{i a}\discretionary{}{}{} - \frac{2}{3}\,{\bar{g}}^{i j} \partial_{j}\!{{{\rm tr} K}}%
 }
 \cdbtag{confMom.107}{%
--4{\bar{A}}^{i a} \partial_{a}{\phi}\discretionary{}{}{}+\partial_{a}{{\bar{A}}^{i a}}\discretionary{}{}{}+2{\bar{A}}^{a b} \partial_{a}{\phi} {\bar{g}}^{i}{}_{b}\discretionary{}{}{}+2{\bar{A}}^{a b} \partial_{b}{\phi} {\bar{g}}^{i}{}_{a}\discretionary{}{}{}-2{\bar{A}}^{a b} {\bar{g}}_{a b} {\bar{g}}^{i c} \partial_{c}{\phi}\discretionary{}{}{}+{\bar{A}}^{a b} {\bar{\Gamma}}^{i}{}_{a b}\discretionary{}{}{}+2{\bar{A}}^{i a} \partial_{a}{\phi} {\bar{g}}^{b}{}_{b}\discretionary{}{}{}+2{\bar{A}}^{i a} \partial_{b}{\phi} {\bar{g}}^{b}{}_{a}\discretionary{}{}{}-2{\bar{A}}^{i a} {\bar{g}}_{a b} {\bar{g}}^{b c} \partial_{c}{\phi}\discretionary{}{}{}+{\bar{A}}^{i a} {\bar{\Gamma}}^{b}{}_{a b}\discretionary{}{}{} - \frac{2}{3}{\bar{g}}^{i a} \partial_{a}{{{\rm tr} K}}%
+-4\,{\bar{A}}^{i a} \partial_{a}\!{\phi}\discretionary{}{}{}+\partial_{a}\!{{\bar{A}}^{i a}}\discretionary{}{}{}+2\,{\bar{A}}^{a b} \partial_{a}\!{\phi} {\bar{g}}^{i}\!{}_{b}\discretionary{}{}{}+2\,{\bar{A}}^{a b} \partial_{b}\!{\phi} {\bar{g}}^{i}\!{}_{a}\discretionary{}{}{}-2\,{\bar{A}}^{a b} {\bar{g}}_{a b} {\bar{g}}^{i c} \partial_{c}\!{\phi}\discretionary{}{}{}+{\bar{A}}^{a b} {\bar{\Gamma}}^{i}\!{}_{a b}\discretionary{}{}{}+2\,{\bar{A}}^{i a} \partial_{a}\!{\phi} {\bar{g}}^{b}\!{}_{b}\discretionary{}{}{}+2\,{\bar{A}}^{i a} \partial_{b}\!{\phi} {\bar{g}}^{b}\!{}_{a}\discretionary{}{}{}-2\,{\bar{A}}^{i a} {\bar{g}}_{a b} {\bar{g}}^{b c} \partial_{c}\!{\phi}\discretionary{}{}{}+{\bar{A}}^{i a} {\bar{\Gamma}}^{b}\!{}_{a b}\discretionary{}{}{} - \frac{2}{3}\,{\bar{g}}^{i a} \partial_{a}\!{{{\rm tr} K}}%
 }
 \cdbtag{confMom.108}{%
--4{\bar{A}}^{i a} \partial_{a}{\phi}\discretionary{}{}{}+\partial_{a}{{\bar{A}}^{i a}}\discretionary{}{}{}+2{\bar{A}}^{a b} \partial_{a}{\phi} {\bar{g}}^{i}{}_{b}\discretionary{}{}{}+2{\bar{A}}^{a b} \partial_{b}{\phi} {\bar{g}}^{i}{}_{a}\discretionary{}{}{}-2{\bar{A}}^{a b} {\bar{g}}_{a b} {\bar{g}}^{i c} \partial_{c}{\phi}\discretionary{}{}{}+{\bar{A}}^{a b} {\bar{\Gamma}}^{i}{}_{a b}\discretionary{}{}{}+2{\bar{A}}^{i a} \partial_{a}{\phi} {\bar{g}}^{b}{}_{b}\discretionary{}{}{}+2{\bar{A}}^{i a} \partial_{b}{\phi} {\bar{g}}^{b}{}_{a}\discretionary{}{}{}-2{\bar{A}}^{i a} {\bar{g}}_{a c} {\bar{g}}^{c b} \partial_{b}{\phi}\discretionary{}{}{}+{\bar{A}}^{i a} {\bar{\Gamma}}^{b}{}_{a b}\discretionary{}{}{} - \frac{2}{3}{\bar{g}}^{i a} \partial_{a}{{{\rm tr} K}}%
+-4\,{\bar{A}}^{i a} \partial_{a}\!{\phi}\discretionary{}{}{}+\partial_{a}\!{{\bar{A}}^{i a}}\discretionary{}{}{}+2\,{\bar{A}}^{a b} \partial_{a}\!{\phi} {\bar{g}}^{i}\!{}_{b}\discretionary{}{}{}+2\,{\bar{A}}^{a b} \partial_{b}\!{\phi} {\bar{g}}^{i}\!{}_{a}\discretionary{}{}{}-2\,{\bar{A}}^{a b} {\bar{g}}_{a b} {\bar{g}}^{i c} \partial_{c}\!{\phi}\discretionary{}{}{}+{\bar{A}}^{a b} {\bar{\Gamma}}^{i}\!{}_{a b}\discretionary{}{}{}+2\,{\bar{A}}^{i a} \partial_{a}\!{\phi} {\bar{g}}^{b}\!{}_{b}\discretionary{}{}{}+2\,{\bar{A}}^{i a} \partial_{b}\!{\phi} {\bar{g}}^{b}\!{}_{a}\discretionary{}{}{}-2\,{\bar{A}}^{i a} {\bar{g}}_{a c} {\bar{g}}^{c b} \partial_{b}\!{\phi}\discretionary{}{}{}+{\bar{A}}^{i a} {\bar{\Gamma}}^{b}\!{}_{a b}\discretionary{}{}{} - \frac{2}{3}\,{\bar{g}}^{i a} \partial_{a}\!{{{\rm tr} K}}%
 }
 \cdbtag{confMom.109}{%
--4{\bar{A}}^{i a} \partial_{a}{\phi}\discretionary{}{}{}+\partial_{a}{{\bar{A}}^{i a}}\discretionary{}{}{}+4{\bar{A}}^{a b} \partial_{a}{\phi} {\bar{g}}^{i}{}_{b}\discretionary{}{}{}-2{\bar{A}}^{a b} {\bar{g}}_{a b} {\bar{g}}^{i c} \partial_{c}{\phi}\discretionary{}{}{}+{\bar{A}}^{a b} {\bar{\Gamma}}^{i}{}_{a b}\discretionary{}{}{}+2{\bar{A}}^{i a} \partial_{a}{\phi} {\bar{g}}^{b}{}_{b}\discretionary{}{}{}+2{\bar{A}}^{i a} \partial_{b}{\phi} {\bar{g}}_{a}{}^{b}\discretionary{}{}{}-2{\bar{A}}^{i a} {\bar{g}}_{a b} {\bar{g}}^{b c} \partial_{c}{\phi}\discretionary{}{}{}+{\bar{A}}^{i a} {\bar{\Gamma}}^{b}{}_{a b}\discretionary{}{}{} - \frac{2}{3}{\bar{g}}^{i a} \partial_{a}{{{\rm tr} K}}%
+-4\,{\bar{A}}^{i a} \partial_{a}\!{\phi}\discretionary{}{}{}+\partial_{a}\!{{\bar{A}}^{i a}}\discretionary{}{}{}+4\,{\bar{A}}^{a b} \partial_{a}\!{\phi} {\bar{g}}^{i}\!{}_{b}\discretionary{}{}{}-2\,{\bar{A}}^{a b} {\bar{g}}_{a b} {\bar{g}}^{i c} \partial_{c}\!{\phi}\discretionary{}{}{}+{\bar{A}}^{a b} {\bar{\Gamma}}^{i}\!{}_{a b}\discretionary{}{}{}+2\,{\bar{A}}^{i a} \partial_{a}\!{\phi} {\bar{g}}^{b}\!{}_{b}\discretionary{}{}{}+2\,{\bar{A}}^{i a} \partial_{b}\!{\phi} {\bar{g}}_{a}\!{}^{b}\discretionary{}{}{}-2\,{\bar{A}}^{i a} {\bar{g}}_{a b} {\bar{g}}^{b c} \partial_{c}\!{\phi}\discretionary{}{}{}+{\bar{A}}^{i a} {\bar{\Gamma}}^{b}\!{}_{a b}\discretionary{}{}{} - \frac{2}{3}\,{\bar{g}}^{i a} \partial_{a}\!{{{\rm tr} K}}%
 }
 \cdbtag{confMom.110}{%
-2{\bar{A}}^{i a} \partial_{a}{\phi}\discretionary{}{}{}+\partial_{a}{{\bar{A}}^{i a}}\discretionary{}{}{}+4{\bar{A}}^{a b} \partial_{a}{\phi} {\bar{g}}^{i}{}_{b}\discretionary{}{}{}-2{\bar{A}}^{a b} {\bar{g}}_{a b} {\bar{g}}^{i c} \partial_{c}{\phi}\discretionary{}{}{}+{\bar{A}}^{a b} {\bar{\Gamma}}^{i}{}_{a b}\discretionary{}{}{}+2{\bar{A}}^{i a} \partial_{b}{\phi} {\bar{g}}_{a}{}^{b}\discretionary{}{}{}-2{\bar{A}}^{i a} {\bar{g}}_{a b} {\bar{g}}^{b c} \partial_{c}{\phi}\discretionary{}{}{}+{\bar{A}}^{i a} {\bar{\Gamma}}^{b}{}_{a b}\discretionary{}{}{} - \frac{2}{3}{\bar{g}}^{i a} \partial_{a}{{{\rm tr} K}}%
+2\,{\bar{A}}^{i a} \partial_{a}\!{\phi}\discretionary{}{}{}+\partial_{a}\!{{\bar{A}}^{i a}}\discretionary{}{}{}+4\,{\bar{A}}^{a b} \partial_{a}\!{\phi} {\bar{g}}^{i}\!{}_{b}\discretionary{}{}{}-2\,{\bar{A}}^{a b} {\bar{g}}_{a b} {\bar{g}}^{i c} \partial_{c}\!{\phi}\discretionary{}{}{}+{\bar{A}}^{a b} {\bar{\Gamma}}^{i}\!{}_{a b}\discretionary{}{}{}+2\,{\bar{A}}^{i a} \partial_{b}\!{\phi} {\bar{g}}_{a}\!{}^{b}\discretionary{}{}{}-2\,{\bar{A}}^{i a} {\bar{g}}_{a b} {\bar{g}}^{b c} \partial_{c}\!{\phi}\discretionary{}{}{}+{\bar{A}}^{i a} {\bar{\Gamma}}^{b}\!{}_{a b}\discretionary{}{}{} - \frac{2}{3}\,{\bar{g}}^{i a} \partial_{a}\!{{{\rm tr} K}}%
 }
 \cdbtag{confMom.111}{%
-2{\bar{A}}^{i a} \partial_{a}{\phi}\discretionary{}{}{}+\partial_{a}{{\bar{A}}^{i a}}\discretionary{}{}{}+4{\bar{A}}^{a b} \partial_{a}{\phi} {\bar{g}}^{i}{}_{b}\discretionary{}{}{}+{\bar{A}}^{a b} {\bar{\Gamma}}^{i}{}_{a b}\discretionary{}{}{}+2{\bar{A}}^{i a} \partial_{b}{\phi} {\bar{g}}_{a}{}^{b}\discretionary{}{}{}-2{\bar{A}}^{i a} {\bar{g}}_{a b} {\bar{g}}^{b c} \partial_{c}{\phi}\discretionary{}{}{}+{\bar{A}}^{i a} {\bar{\Gamma}}^{b}{}_{a b}\discretionary{}{}{} - \frac{2}{3}{\bar{g}}^{i a} \partial_{a}{{{\rm tr} K}}%
+2\,{\bar{A}}^{i a} \partial_{a}\!{\phi}\discretionary{}{}{}+\partial_{a}\!{{\bar{A}}^{i a}}\discretionary{}{}{}+4\,{\bar{A}}^{a b} \partial_{a}\!{\phi} {\bar{g}}^{i}\!{}_{b}\discretionary{}{}{}+{\bar{A}}^{a b} {\bar{\Gamma}}^{i}\!{}_{a b}\discretionary{}{}{}+2\,{\bar{A}}^{i a} \partial_{b}\!{\phi} {\bar{g}}_{a}\!{}^{b}\discretionary{}{}{}-2\,{\bar{A}}^{i a} {\bar{g}}_{a b} {\bar{g}}^{b c} \partial_{c}\!{\phi}\discretionary{}{}{}+{\bar{A}}^{i a} {\bar{\Gamma}}^{b}\!{}_{a b}\discretionary{}{}{} - \frac{2}{3}\,{\bar{g}}^{i a} \partial_{a}\!{{{\rm tr} K}}%
 }
 \cdbtag{confMom.112}{%
-2{\bar{A}}^{i a} \partial_{a}{\phi}\discretionary{}{}{}+\partial_{a}{{\bar{A}}^{i a}}\discretionary{}{}{}+4{\bar{A}}^{a b} \partial_{a}{\phi} {\bar{g}}^{i}{}_{b}\discretionary{}{}{}+{\bar{A}}^{a b} {\bar{\Gamma}}^{i}{}_{a b}\discretionary{}{}{}+2{\bar{A}}^{i a} \partial_{b}{\phi} {\bar{g}}_{a}{}^{b}\discretionary{}{}{}-2{\bar{A}}^{i a} {\bar{g}}_{a}{}^{c} \partial_{c}{\phi}\discretionary{}{}{}+{\bar{A}}^{i a} {\bar{\Gamma}}^{b}{}_{a b}\discretionary{}{}{} - \frac{2}{3}{\bar{g}}^{i a} \partial_{a}{{{\rm tr} K}}%
+2\,{\bar{A}}^{i a} \partial_{a}\!{\phi}\discretionary{}{}{}+\partial_{a}\!{{\bar{A}}^{i a}}\discretionary{}{}{}+4\,{\bar{A}}^{a b} \partial_{a}\!{\phi} {\bar{g}}^{i}\!{}_{b}\discretionary{}{}{}+{\bar{A}}^{a b} {\bar{\Gamma}}^{i}\!{}_{a b}\discretionary{}{}{}+2\,{\bar{A}}^{i a} \partial_{b}\!{\phi} {\bar{g}}_{a}\!{}^{b}\discretionary{}{}{}-2\,{\bar{A}}^{i a} {\bar{g}}_{a}\!{}^{c} \partial_{c}\!{\phi}\discretionary{}{}{}+{\bar{A}}^{i a} {\bar{\Gamma}}^{b}\!{}_{a b}\discretionary{}{}{} - \frac{2}{3}\,{\bar{g}}^{i a} \partial_{a}\!{{{\rm tr} K}}%
 }
 \cdbtag{confMom.113}{%
-2{\bar{A}}^{i a} \partial_{a}{\phi}\discretionary{}{}{}+\partial_{a}{{\bar{A}}^{i a}}\discretionary{}{}{}+4{\bar{A}}^{a b} \partial_{a}{\phi} {\bar{g}}^{i}{}_{b}\discretionary{}{}{}+{\bar{A}}^{a b} {\bar{\Gamma}}^{i}{}_{a b}\discretionary{}{}{}+2{\bar{A}}^{i a} \partial_{b}{\phi} {\bar{g}}_{a}{}^{b}\discretionary{}{}{}-2{\bar{A}}^{i a} {\bar{g}}_{a}{}^{c} \partial_{c}{\phi}\discretionary{}{}{} - \frac{2}{3}{\bar{g}}^{i a} \partial_{a}{{{\rm tr} K}}%
+2\,{\bar{A}}^{i a} \partial_{a}\!{\phi}\discretionary{}{}{}+\partial_{a}\!{{\bar{A}}^{i a}}\discretionary{}{}{}+4\,{\bar{A}}^{a b} \partial_{a}\!{\phi} {\bar{g}}^{i}\!{}_{b}\discretionary{}{}{}+{\bar{A}}^{a b} {\bar{\Gamma}}^{i}\!{}_{a b}\discretionary{}{}{}+2\,{\bar{A}}^{i a} \partial_{b}\!{\phi} {\bar{g}}_{a}\!{}^{b}\discretionary{}{}{}-2\,{\bar{A}}^{i a} {\bar{g}}_{a}\!{}^{c} \partial_{c}\!{\phi}\discretionary{}{}{} - \frac{2}{3}\,{\bar{g}}^{i a} \partial_{a}\!{{{\rm tr} K}}%
 }
 \cdbtag{confMom.114}{%
-2{\bar{A}}^{i a} \partial_{a}{\phi}\discretionary{}{}{}+\partial_{a}{{\bar{A}}^{i a}}\discretionary{}{}{}+4{\bar{A}}^{a i} \partial_{a}{\phi}\discretionary{}{}{}+{\bar{A}}^{a b} {\bar{\Gamma}}^{i}{}_{a b}\discretionary{}{}{}+2{\bar{A}}^{i b} \partial_{b}{\phi}\discretionary{}{}{}-2{\bar{A}}^{i c} \partial_{c}{\phi}\discretionary{}{}{} - \frac{2}{3}{\bar{g}}^{i a} \partial_{a}{{{\rm tr} K}}%
+2\,{\bar{A}}^{i a} \partial_{a}\!{\phi}\discretionary{}{}{}+\partial_{a}\!{{\bar{A}}^{i a}}\discretionary{}{}{}+4\,{\bar{A}}^{a i} \partial_{a}\!{\phi}\discretionary{}{}{}+{\bar{A}}^{a b} {\bar{\Gamma}}^{i}\!{}_{a b}\discretionary{}{}{}+2\,{\bar{A}}^{i b} \partial_{b}\!{\phi}\discretionary{}{}{}-2\,{\bar{A}}^{i c} \partial_{c}\!{\phi}\discretionary{}{}{} - \frac{2}{3}\,{\bar{g}}^{i a} \partial_{a}\!{{{\rm tr} K}}%
 }
 \cdbtag{confMom.115}{%
-6{\bar{A}}^{i a} \partial_{a}{\phi}\discretionary{}{}{}+\partial_{a}{{\bar{A}}^{i a}}\discretionary{}{}{}+{\bar{A}}^{a b} {\bar{\Gamma}}^{i}{}_{a b}\discretionary{}{}{} - \frac{2}{3}{\bar{g}}^{i a} \partial_{a}{{{\rm tr} K}}%
+6\,{\bar{A}}^{i a} \partial_{a}\!{\phi}\discretionary{}{}{}+\partial_{a}\!{{\bar{A}}^{i a}}\discretionary{}{}{}+{\bar{A}}^{a b} {\bar{\Gamma}}^{i}\!{}_{a b}\discretionary{}{}{} - \frac{2}{3}\,{\bar{g}}^{i a} \partial_{a}\!{{{\rm tr} K}}%
 }
 \cdbtag{confMom.201}{%
-6{\bar{A}}^{i a} \partial_{a}{\phi}\discretionary{}{}{}+\partial_{a}{{\bar{A}}^{i a}}\discretionary{}{}{}+{\bar{A}}^{a b} {\bar{\Gamma}}^{i}{}_{a b}\discretionary{}{}{} - \frac{2}{3}{\bar{g}}^{i a} \partial_{a}{{{\rm tr} K}}%
+6\,{\bar{A}}^{i a} \partial_{a}\!{\phi}\discretionary{}{}{}+\partial_{a}\!{{\bar{A}}^{i a}}\discretionary{}{}{}+{\bar{A}}^{a b} {\bar{\Gamma}}^{i}\!{}_{a b}\discretionary{}{}{} - \frac{2}{3}\,{\bar{g}}^{i a} \partial_{a}\!{{{\rm tr} K}}%
 }
 \cdbtag{confMom.202}{%
-\partial_{a}{{\bar{A}}^{b c}}%
+\partial_{a}\!{{\bar{A}}^{b c}}%
 }
 \cdbtag{confMom.203}{%
-6{\bar{A}}^{i a} \partial_{a}{\phi}\discretionary{}{}{}+X^{i a}{}_{a}\discretionary{}{}{}+{\bar{A}}^{a b} {\bar{\Gamma}}^{i}{}_{a b}\discretionary{}{}{} - \frac{2}{3}{\bar{g}}^{i a} \partial_{a}{{{\rm tr} K}}%
+6\,{\bar{A}}^{i a} \partial_{a}\!{\phi}\discretionary{}{}{}+X^{i a}\!{}_{a}\discretionary{}{}{}+{\bar{A}}^{a b} {\bar{\Gamma}}^{i}\!{}_{a b}\discretionary{}{}{} - \frac{2}{3}\,{\bar{g}}^{i a} \partial_{a}\!{{{\rm tr} K}}%
 }
 \cdbtag{confMom.204}{%
-6{\bar{A}}^{i a} \partial_{a}{\phi}\discretionary{}{}{}+X^{i a}{}_{a}\discretionary{}{}{}+{\bar{A}}^{a b} {\bar{\Gamma}}^{i}{}_{a b}\discretionary{}{}{} - \frac{2}{3}{\bar{g}}^{i a} \partial_{a}{{{\rm tr} K}}%
+6\,{\bar{A}}^{i a} \partial_{a}\!{\phi}\discretionary{}{}{}+X^{i a}\!{}_{a}\discretionary{}{}{}+{\bar{A}}^{a b} {\bar{\Gamma}}^{i}\!{}_{a b}\discretionary{}{}{} - \frac{2}{3}\,{\bar{g}}^{i a} \partial_{a}\!{{{\rm tr} K}}%
 }
 \cdbtag{confMom.205}{%
-6{\bar{A}}^{i a} \partial_{a}{\phi}\discretionary{}{}{}+{\bar{A}}^{a b} {\bar{\Gamma}}^{i}{}_{a b}\discretionary{}{}{} - \frac{2}{3}{\bar{g}}^{i a} \partial_{a}{{{\rm tr} K}}%
+6\,{\bar{A}}^{i a} \partial_{a}\!{\phi}\discretionary{}{}{}+{\bar{A}}^{a b} {\bar{\Gamma}}^{i}\!{}_{a b}\discretionary{}{}{} - \frac{2}{3}\,{\bar{g}}^{i a} \partial_{a}\!{{{\rm tr} K}}%
 }
 \cdbtag{confMom.206}{%
-X^{i a}{}_{a}%
+X^{i a}\!{}_{a}%
 }
 \cdbtag{confMom.207}{%
-\partial_{a}{{\bar{A}}^{i a}}%
+\partial_{a}\!{{\bar{A}}^{i a}}%
 }
 \cdbtag{confMom.208}{%
--6{\bar{A}}^{i a} \partial_{a}{\phi}\discretionary{}{}{}-{\bar{A}}^{a b} {\bar{\Gamma}}^{i}{}_{a b}\discretionary{}{}{}+\frac{2}{3}{\bar{g}}^{i a} \partial_{a}{{{\rm tr} K}}%
+-6\,{\bar{A}}^{i a} \partial_{a}\!{\phi}\discretionary{}{}{}-\,{\bar{A}}^{a b} {\bar{\Gamma}}^{i}\!{}_{a b}\discretionary{}{}{}+\frac{2}{3}\,{\bar{g}}^{i a} \partial_{a}\!{{{\rm tr} K}}%
 }
 \cdbtag{confMom.209}{%
-\partial_{a}{{\bar{A}}^{i a}} \rightarrow -6{\bar{A}}^{i a} \partial_{a}{\phi}\discretionary{}{}{}-{\bar{A}}^{a b} {\bar{\Gamma}}^{i}{}_{a b}\discretionary{}{}{}+\frac{2}{3}{\bar{g}}^{i a} \partial_{a}{{{\rm tr} K}}%
+\partial_{a}\!{{\bar{A}}^{i a}} \rightarrow -6\,{\bar{A}}^{i a} \partial_{a}\!{\phi}\discretionary{}{}{}-\,{\bar{A}}^{a b} {\bar{\Gamma}}^{i}\!{}_{a b}\discretionary{}{}{}+\frac{2}{3}\,{\bar{g}}^{i a} \partial_{a}\!{{{\rm tr} K}}%
 }
 \cdbtag{prd67.eq20.lcb}{%
-6{\bar{A}}^{i a} \partial_{a}{\phi}\discretionary{}{}{}+\partial_{a}{{\bar{A}}^{i a}}\discretionary{}{}{}+{\bar{A}}^{a b} {\bar{\Gamma}}^{i}{}_{a b}\discretionary{}{}{} - \frac{2}{3}{\bar{g}}^{i a} \partial_{a}{{{\rm tr} K}}%
+6\,{\bar{A}}^{i a} \partial_{a}\!{\phi}\discretionary{}{}{}+\partial_{a}\!{{\bar{A}}^{i a}}\discretionary{}{}{}+{\bar{A}}^{a b} {\bar{\Gamma}}^{i}\!{}_{a b}\discretionary{}{}{} - \frac{2}{3}\,{\bar{g}}^{i a} \partial_{a}\!{{{\rm tr} K}}%
 }
 \cdbtag{prd67.eq20.prd}{%
-\partial_{a}{{\bar{A}}^{i a}}\discretionary{}{}{}+6{\bar{A}}^{i a} \partial_{a}{\phi}\discretionary{}{}{}+{\bar{A}}^{a b} {\bar{\Gamma}}^{i}{}_{a b}\discretionary{}{}{} - \frac{2}{3}{\bar{g}}^{i a} \partial_{a}{{{\rm tr} K}}%
+\partial_{a}\!{{\bar{A}}^{i a}}\discretionary{}{}{}+6\,{\bar{A}}^{i a} \partial_{a}\!{\phi}\discretionary{}{}{}+{\bar{A}}^{a b} {\bar{\Gamma}}^{i}\!{}_{a b}\discretionary{}{}{} - \frac{2}{3}\,{\bar{g}}^{i a} \partial_{a}\!{{{\rm tr} K}}%
 }
 \cdbtag{prd67.eq20.chk}{%
-0%
+0\,%
 }
 \catcode`\#=\thehashcode          % restore original catcode for hash

@@ -13,6 +13,7 @@
 *.cdbtxt
 *.synctex.gz
 private
+sync-ssd.sh
 sync.sh
 diff.sh
 TO-DO.txt

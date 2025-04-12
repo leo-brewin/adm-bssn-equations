@@ -1,33 +1,33 @@
 \chardef\thehashcode=\catcode`\#	 % save catcode of hash (probably 6)
 \catcode`\#=11			             % set catcode for hash to be a letter (11)
 \cdbtag{eq10.101}{%
-\partial_{t}{\phi}%
+\partial_{t}\!{\phi}%
 }
 \cdbtag{eq10.102}{%
-\frac{1}{12}\partial_{t}\left(\log\left({g}\right)\right)%
+\frac{1}{12}\,\partial_{t}\!\left(\log\left({g}\right)\right)%
 }
 \cdbtag{eq10.103}{%
-\frac{1}{12}{{g}}^{-1} \partial_{t}{{g}}%
+\frac{1}{12}\,{{g}}^{-\,1} \partial_{t}\!{{g}}%
 }
 \cdbtag{eq10.104}{%
-\frac{1}{12}{{g}}^{-1} {g} g^{i j} \partial_{t}{g_{i j}}%
+\frac{1}{12}\,{{g}}^{-\,1} {g} g^{i j} \partial_{t}\!{g_{i j}}%
 }
 \cdbtag{eq10.105}{%
- - \frac{1}{6}{{g}}^{-1} {g} g^{i j} N K_{i j}%
+ - \frac{1}{6}\,{{g}}^{-\,1} {g} g^{i j} N K_{i j}%
 }
 \cdbtag{eq10.106}{%
- - \frac{1}{6}{{g}}^{-1} {g} {{\rm tr} K} N%
+ - \frac{1}{6}\,{{g}}^{-\,1} {g} {{\rm tr} K} N%
 }
 \cdbtag{eq10.107}{%
- - \frac{1}{6}{{\rm tr} K} N%
+ - \frac{1}{6}\,{{\rm tr} K} N%
 }
 \cdbtag{eq10.lcb}{%
- - \frac{1}{6}{{\rm tr} K} N%
+ - \frac{1}{6}\,{{\rm tr} K} N%
 }
 \cdbtag{eq10.prd}{%
- - \frac{1}{6}N {{\rm tr} K}%
+ - \frac{1}{6}\,N {{\rm tr} K}%
 }
 \cdbtag{eq10.chk}{%
-0%
+0\,%
 }
 \catcode`\#=\thehashcode          % restore original catcode for hash

@@ -1,15 +1,15 @@
 \chardef\thehashcode=\catcode`\#	 % save catcode of hash (probably 6)
 \catcode`\#=11			             % set catcode for hash to be a letter (11)
 \cdbtag{eq20.101}{%
--2{\bar{A}}^{i a} \partial_{a}{N}\discretionary{}{}{}-2N \left(-6{\bar{A}}^{i a} \partial_{a}{\phi}\discretionary{}{}{}-{\bar{A}}^{a b} {\bar{\Gamma}}^{i}{}_{a b}\discretionary{}{}{}+\frac{2}{3}{\bar{g}}^{i a} \partial_{a}{{{\rm tr} K}}\right)%
+-2\,{\bar{A}}^{i a} \partial_{a}\!{N}\discretionary{}{}{}-2\,N \left(-6\,{\bar{A}}^{i a} \partial_{a}\!{\phi}\discretionary{}{}{}-\,{\bar{A}}^{a b} {\bar{\Gamma}}^{i}\!{}_{a b}\discretionary{}{}{}+\frac{2}{3}\,{\bar{g}}^{i a} \partial_{a}\!{{{\rm tr} K}}\right)%
 }
 \cdbtag{eq20.lcb}{%
--2{\bar{A}}^{i a} \partial_{a}{N}\discretionary{}{}{}-2N \left(-6{\bar{A}}^{i a} \partial_{a}{\phi}\discretionary{}{}{}-{\bar{A}}^{a b} {\bar{\Gamma}}^{i}{}_{a b}\discretionary{}{}{}+\frac{2}{3}{\bar{g}}^{i a} \partial_{a}{{{\rm tr} K}}\right)%
+-2\,{\bar{A}}^{i a} \partial_{a}\!{N}\discretionary{}{}{}-2\,N \left(-6\,{\bar{A}}^{i a} \partial_{a}\!{\phi}\discretionary{}{}{}-\,{\bar{A}}^{a b} {\bar{\Gamma}}^{i}\!{}_{a b}\discretionary{}{}{}+\frac{2}{3}\,{\bar{g}}^{i a} \partial_{a}\!{{{\rm tr} K}}\right)%
 }
 \cdbtag{eq20.prd}{%
--2{\bar{A}}^{i j} \partial_{j}{N}\discretionary{}{}{}+2N \left({\bar{\Gamma}}^{i}{}_{j k} {\bar{A}}^{k j}\discretionary{}{}{} - \frac{2}{3}{\bar{g}}^{i j} \partial_{j}{{{\rm tr} K}}\discretionary{}{}{}+6{\bar{A}}^{i j} \partial_{j}{\phi}\right)%
+-2\,{\bar{A}}^{i j} \partial_{j}\!{N}\discretionary{}{}{}+2\,N \left({\bar{\Gamma}}^{i}\!{}_{j k} {\bar{A}}^{k j}\discretionary{}{}{} - \frac{2}{3}\,{\bar{g}}^{i j} \partial_{j}\!{{{\rm tr} K}}\discretionary{}{}{}+6\,{\bar{A}}^{i j} \partial_{j}\!{\phi}\right)%
 }
 \cdbtag{eq20.chk}{%
-0%
+0\,%
 }
 \catcode`\#=\thehashcode          % restore original catcode for hash

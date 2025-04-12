@@ -1,57 +1,57 @@
 \chardef\thehashcode=\catcode`\#	 % save catcode of hash (probably 6)
 \catcode`\#=11			             % set catcode for hash to be a letter (11)
 \cdbtag{prd62.eq09.lhs}{%
-\partial_{t}{{\bar{g}}_{i j}}%
+\partial_{t}\!{{\bar{g}}_{i j}}%
 }
 \cdbtag{prd62.eq09.rhs}{%
--2N {\bar{A}}_{i j}%
+-2\,N {\bar{A}}_{i j}%
 }
 \cdbtag{prd62.eq10.lhs}{%
-\partial_{t}{\phi}%
+\partial_{t}\!{\phi}%
 }
 \cdbtag{prd62.eq10.rhs}{%
- - \frac{1}{6}N {{\rm tr} K}%
+ - \frac{1}{6}\,N {{\rm tr} K}%
 }
 \cdbtag{prd62.eq11.lhs}{%
-\partial_{t}{K}%
+\partial_{t}\!{K}%
 }
 \cdbtag{prd62.eq11.rhs}{%
--g^{i j} D_{i j}{N}\discretionary{}{}{}+N \left({\bar{A}}_{i j} {\bar{A}}^{i j}\discretionary{}{}{}+\frac{1}{3}{{{\rm tr} K}}^{2}\right)%
+-\,g^{i j} D_{i j}\!{N}\discretionary{}{}{}+N \left({\bar{A}}_{i j} {\bar{A}}^{i j}\discretionary{}{}{}+\frac{1}{3}\,{{{\rm tr} K}}^{2\,}\right)%
 }
 \cdbtag{prd62.eq12.lhs}{%
-\partial_{t}{{\bar{A}}_{i j}}%
+\partial_{t}\!{{\bar{A}}_{i j}}%
 }
 \cdbtag{prd62.eq12.rhs}{%
-N \left({{\rm tr} K} {\bar{A}}_{i j}\discretionary{}{}{}-2{\bar{A}}_{i a} {\bar{A}}^{a}{}_{j}\right)\discretionary{}{}{}+\exp\left(-4\phi\right) \left(N R_{i j}\discretionary{}{}{}-D_{i j}{N}\discretionary{}{}{} - \frac{1}{3}g_{i j} \left(N R_{a b}\discretionary{}{}{}-D_{a b}{N}\right) g^{a b}\right)%
+N \left({{\rm tr} K} {\bar{A}}_{i j}\discretionary{}{}{}-2\,{\bar{A}}_{i a} {\bar{A}}^{a}\!{}_{j}\right)\discretionary{}{}{}+\exp\left(-4\,\phi\right) \left(N R_{i j}\discretionary{}{}{}-\,D_{i j}\!{N}\discretionary{}{}{} - \frac{1}{3}\,g_{i j} \left(N R_{a b}\discretionary{}{}{}-\,D_{a b}\!{N}\right) g^{a b}\right)%
 }
 \cdbtag{prd62.eq15.lhs}{%
-R^{\phi}{}_{i j}%
+R^{\phi}\!{}_{i j}%
 }
 \cdbtag{prd62.eq15.rhs}{%
--2{\bar{D}}_{a b}{\phi}\discretionary{}{}{}-2{\bar{g}}_{a b} {\bar{g}}^{c d} {\bar{D}}_{c d}{\phi}\discretionary{}{}{}+4{\bar{D}}_{a}{\phi} {\bar{D}}_{b}{\phi}\discretionary{}{}{}-4{\bar{g}}_{a b} {\bar{g}}^{c d} {\bar{D}}_{c}{\phi} {\bar{D}}_{d}{\phi}%
+-2\,{\bar{D}}_{a b}\!{\phi}\discretionary{}{}{}-2\,{\bar{g}}_{a b} {\bar{g}}^{c d} {\bar{D}}_{c d}\!{\phi}\discretionary{}{}{}+4\,{\bar{D}}_{a}\!{\phi} {\bar{D}}_{b}\!{\phi}\discretionary{}{}{}-4\,{\bar{g}}_{a b} {\bar{g}}^{c d} {\bar{D}}_{c}\!{\phi} {\bar{D}}_{d}\!{\phi}%
 }
 \cdbtag{prd62.eq17.lhs}{%
 {\bar{\Gamma}}^{i}%
 }
 \cdbtag{prd62.eq17.rhs}{%
--\partial_{j}{{\bar{g}}^{i j}}%
+-\,\partial_{j}\!{{\bar{g}}^{i j}}%
 }
 \cdbtag{prd62.eq18.lhs}{%
 {\bar{R}}_{i j}%
 }
 \cdbtag{prd62.eq18.rhs}{%
- - \frac{1}{2}{\bar{g}}^{l m} \partial_{l m}{{\bar{g}}_{a b}}\discretionary{}{}{}+\frac{1}{2}{\bar{g}}_{k a} \partial_{b}{{\bar{\Gamma}}^{k}}\discretionary{}{}{}+\frac{1}{2}{\bar{g}}_{k b} \partial_{a}{{\bar{\Gamma}}^{k}}\discretionary{}{}{}+\frac{1}{2}{\bar{\Gamma}}^{k} {\bar{\Gamma}}_{a b k}\discretionary{}{}{}+\frac{1}{2}{\bar{\Gamma}}^{k} {\bar{\Gamma}}_{b a k}\discretionary{}{}{}+{\bar{g}}^{l m} {\bar{g}}^{k e} \left({\bar{\Gamma}}_{e l a} {\bar{\Gamma}}_{b k m}\discretionary{}{}{}+{\bar{\Gamma}}_{e l b} {\bar{\Gamma}}_{a k m}\discretionary{}{}{}+{\bar{\Gamma}}_{k a m} {\bar{\Gamma}}_{e l b}\right)%
+ - \frac{1}{2}\,{\bar{g}}^{l m} \partial_{l m}\!{{\bar{g}}_{a b}}\discretionary{}{}{}+\frac{1}{2}\,{\bar{g}}_{k a} \partial_{b}\!{{\bar{\Gamma}}^{k}}\discretionary{}{}{}+\frac{1}{2}\,{\bar{g}}_{k b} \partial_{a}\!{{\bar{\Gamma}}^{k}}\discretionary{}{}{}+\frac{1}{2}\,{\bar{\Gamma}}^{k} {\bar{\Gamma}}_{a b k}\discretionary{}{}{}+\frac{1}{2}\,{\bar{\Gamma}}^{k} {\bar{\Gamma}}_{b a k}\discretionary{}{}{}+{\bar{g}}^{l m} {\bar{g}}^{k e} \left({\bar{\Gamma}}_{e l a} {\bar{\Gamma}}_{b k m}\discretionary{}{}{}+{\bar{\Gamma}}_{e l b} {\bar{\Gamma}}_{a k m}\discretionary{}{}{}+{\bar{\Gamma}}_{k a m} {\bar{\Gamma}}_{e l b}\right)%
 }
 \cdbtag{prd62.eq19.lhs}{%
-\partial_{t}{{\bar{\Gamma}}^{i}}%
+\partial_{t}\!{{\bar{\Gamma}}^{i}}%
 }
 \cdbtag{prd62.eq19.rhs}{%
--2\partial_{j}\left(N {\bar{A}}^{i j}\right)%
+-2\,\partial_{j}\!\left(N {\bar{A}}^{i j}\right)%
 }
 \cdbtag{prd62.eq20.lhs}{%
-\partial_{t}{{\bar{\Gamma}}^{i}}%
+\partial_{t}\!{{\bar{\Gamma}}^{i}}%
 }
 \cdbtag{prd62.eq20.rhs}{%
--2{\bar{A}}^{i j} \partial_{j}{N}\discretionary{}{}{}+2N \left({\bar{\Gamma}}^{i}{}_{j k} {\bar{A}}^{k j}\discretionary{}{}{} - \frac{2}{3}{\bar{g}}^{i j} \partial_{j}{{{\rm tr} K}}\discretionary{}{}{}+6{\bar{A}}^{i j} \partial_{j}{\phi}\right)%
+-2\,{\bar{A}}^{i j} \partial_{j}\!{N}\discretionary{}{}{}+2\,N \left({\bar{\Gamma}}^{i}\!{}_{j k} {\bar{A}}^{k j}\discretionary{}{}{} - \frac{2}{3}\,{\bar{g}}^{i j} \partial_{j}\!{{{\rm tr} K}}\discretionary{}{}{}+6\,{\bar{A}}^{i j} \partial_{j}\!{\phi}\right)%
 }
 \catcode`\#=\thehashcode          % restore original catcode for hash
